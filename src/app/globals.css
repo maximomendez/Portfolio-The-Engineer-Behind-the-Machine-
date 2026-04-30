@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-bg-primary: #0b0b0b;
+  --color-bg-secondary: #151515;
+  --color-bg-card: #1a1a1a;
+  --color-metallic: #2a2a2a;
+  --color-soft-white: #ededed;
+  --color-muted: #6b6b6b;
+
+  --color-accent-red: #ff2d2d;
+  --color-accent-blue: #00d4ff;
+  --color-accent-green: #3dff8f;
+
+  /* Fonts */
+  --font-heading: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  background-color: #0b0b0b;
+  color: #ededed;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #0b0b0b;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0b0b;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff2d2d;
+}
+
+/* Selection */
+::selection {
+  background-color: #ff2d2d33;
+  color: #ededed;
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 1px solid #ff2d2d;
+  outline-offset: 2px;
+}
