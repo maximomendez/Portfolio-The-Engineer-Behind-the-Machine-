@@ -1,7 +1,7 @@
 import { Ignition } from "@/components/sections/Ignition";
+import { Dashboard } from "@/components/sections/Dashboard";
 
 const PLACEHOLDER_SECTIONS = [
-  { id: "dashboard", label: "Dashboard" },
   { id: "engine", label: "Engine" },
   { id: "ai-system", label: "AI System" },
   { id: "track", label: "Track" },
@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <main className="pb-7">
       <Ignition />
+      <Dashboard />
       {PLACEHOLDER_SECTIONS.map(({ id, label }) => (
         <section
           key={id}
