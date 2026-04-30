@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main>
+    <main className="pb-7">
       <section
         id="ignition"
         style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}

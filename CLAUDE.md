@@ -925,24 +925,56 @@ src/
 
 ## Fase 1 — MVP sólido
 
-Objetivo: construir una versión clara, rápida y publicable.
-
-Incluye:
-
-- Landing Ignition.
-- Dashboard.
-- Backend section.
-- AI section.
-- Projects.
-- Contact.
-- Animaciones simples con Framer Motion.
-- Deploy en Vercel.
-
-No incluir todavía:
-
-- 3D complejo.
-- Easter eggs.
-- Simulaciones avanzadas.
+  ---                                                                                                                                                                                                       
+  Phase 1 Plan — MVP Portfolio                                                                                                                                                                              
+                                                                                                                                                                                                            
+  Upfront decisions (lock these first)                                                                                                                                                                      
+                                                                                                                                                                                                            
+  - next/font/google for Space Grotesk + Inter (no layout shift)                                                                                                                                            
+  - All colors as CSS custom properties + Tailwind extensions (enables Night Drive Mode later)
+  - All Framer Motion variants centralized in lib/animations.ts                                                                                                                                             
+  - Server Components by default — only interactive pieces use "use client"
+  - CSS snap scroll for Track section (GSAP horizontal pinning is Phase 2)                                                                                                                                  
+  - Resend for contact form via a Next.js Route Handler                                                                                                                                                     
+                                                                                                                                                                                                            
+  ---                                                                                                                                                                                                       
+  Build order (10 steps)                                                                                                                                                                                    
+                        
+  ┌─────┬─────────────────────────┬─────────────────────────────────────────────────────────────────┬───────┐
+  │  #  │          Step           │                         Sections built                          │ ~Time │                                                                                               
+  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤
+  │ 1   │ Foundation              │ Scaffold, Tailwind config, CSS variables, fonts, providers      │ 2h    │                                                                                               
+  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤
+  │ 2   │ Navigation + Health Bar │ Fixed nav, SystemHealthBar HUD strip                            │ 1h    │                                                                                               
+  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
+  │ 3   │ Ignition                │ Fullscreen landing + engine boot animation                      │ 3h    │                                                                                               
+  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
+  │ 4   │ Dashboard               │ Metrics, skill indicators, expertise areas                      │ 4h    │
+  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
+  │ 5   │ Engine                  │ Backend showcase, architecture diagram, case study previews     │ 3h    │
+  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
+  │ 6   │ AI System               │ Workflow simulator, before/after metrics, agent cards           │ 4h    │
+  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
+  │ 7   │ Track                   │ Horizontal scroll project cards (Pathmonk, Fitenium, Contactel) │ 3h    │
+  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
+  │ 8   │ Pit Stop                │ Contact form with terminal styling, Resend, success animation   │ 2h    │
+  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
+  │ 9   │ Polish                  │ Responsive audit, reduced motion, meta tags, Lighthouse         │ 3h    │
+  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
+  │ 10  │ Deploy                  │ Vercel deploy, env vars, production test                        │ 1h    │
+  └─────┴─────────────────────────┴─────────────────────────────────────────────────────────────────┴───────┘                                                                                               
+   
+  Total: ~26h of focused work                                                                                                                                                                               
+                  
+  ---                                                                                                                                                                                                       
+  Explicitly deferred (do NOT start these yet)
+                                                                                                                                                                                                            
+  - Electrical System, Telemetry, Garage sections → Phase 2
+  - GSAP ScrollTrigger, scroll pinning, parallax → Phase 2                                                                                                                                                  
+  - 3D (Spline/R3F), AI Co-Pilot, Turbo Mode easter egg → Phase 3                                                                                                                                           
+  - Case study detail pages → Phase 2                                                                                                                                                                       
+                                                                                                                                                                                                            
+  ---  
 
 ---
 
@@ -1085,6 +1117,7 @@ Claude must follow these rules when creating, editing, or refactoring code.
 - Do not add new dependencies unless explicitly requested.
 - Follow the existing project structure and naming conventions.
 - Make sure code is compatible with Vercel.
+- USE DESIGN_SYSTEM.md file to do the layout.
 
 
 ## Next.js Rules

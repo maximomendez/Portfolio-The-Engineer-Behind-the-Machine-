@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
+import { Nav } from "@/components/navigation/Nav";
+import { SystemHealthBar } from "@/components/navigation/SystemHealthBar";
 import "./globals.css";
 
 const inter = Inter({
@@ -36,7 +38,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body>
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <SmoothScrollProvider>
+          <Nav />
+          {children}
+          <SystemHealthBar />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
