@@ -1,6 +1,15 @@
 @import "tailwindcss";
 
+@keyframes device-rock {
+  0%   { transform: rotate(0deg); }
+  30%  { transform: rotate(85deg); }
+  70%  { transform: rotate(85deg); }
+  100% { transform: rotate(0deg); }
+}
+
 @theme {
+  --animate-spin-slow: device-rock 2.4s ease-in-out infinite;
+
   /* Colors */
   --color-bg-primary: #0b0b0b;
   --color-bg-secondary: #151515;
@@ -19,10 +28,18 @@
   --font-mono: ui-monospace, "Cascadia Code", monospace;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  button:not(:disabled),
+  a,
+  [role="button"] {
+    cursor: pointer;
+  }
 }
 
 html {

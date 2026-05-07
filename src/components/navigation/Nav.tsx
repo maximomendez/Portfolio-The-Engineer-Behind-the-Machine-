@@ -3,18 +3,13 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-
-const NAV_LINKS = [
-  { label: "Dashboard", href: "#dashboard" },
-  { label: "Engine", href: "#engine" },
-  { label: "AI System", href: "#ai-system" },
-  { label: "Projects", href: "#track" },
-  { label: "Contact", href: "#pit-stop" },
-];
+import { useLanguage } from "@/context/LanguageContext";
+import type { Lang } from "@/lib/translations";
 
 const SECTION_IDS = ["ignition", "dashboard", "engine", "ai-system", "track", "pit-stop"];
 
 export function Nav() {
+  const { lang, setLang, t } = useLanguage();
   const [activeSection, setActiveSection] = useState("ignition");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -44,11 +39,15 @@ export function Nav() {
     el?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const isDashboard = activeSection === "dashboard";
+
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        isDashboard
+          ? "md:-translate-y-full md:opacity-0 md:pointer-events-none"
+          : scrolled
           ? "border-b border-[#2a2a2a] bg-[#0b0b0b]/90 backdrop-blur-md"
           : "bg-transparent"
       )}
@@ -68,33 +67,55 @@ export function Nav() {
           </span>
         </button>
 
-        {/* Desktop links */}
-        <ul className="hidden items-center gap-6 md:flex">
-          {NAV_LINKS.map(({ label, href }) => {
-            const id = href.replace("#", "");
-            const isActive = activeSection === id;
-            return (
-              <li key={href}>
-                <button
-                  onClick={() => handleNav(href)}
-                  className={cn(
-                    "relative font-mono text-[11px] tracking-widest transition-colors duration-200 focus-visible:outline-none",
-                    isActive ? "text-[#ff2d2d]" : "text-[#6b6b6b] hover:text-[#ededed]"
-                  )}
-                >
-                  {label.toUpperCase()}
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-indicator"
-                      className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#ff2d2d]"
-                      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                    />
-                  )}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+        {/* Desktop links + lang toggle */}
+        <div className="hidden items-center gap-6 md:flex">
+          <ul className="flex items-center gap-6">
+            {t.nav.links.map(({ label, href }) => {
+              const id = href.replace("#", "");
+              const isActive = activeSection === id;
+              return (
+                <li key={href}>
+                  <button
+                    onClick={() => handleNav(href)}
+                    className={cn(
+                      "relative font-mono text-[11px] tracking-widest transition-colors duration-200 focus-visible:outline-none",
+                      isActive ? "text-[#ff2d2d]" : "text-[#6b6b6b] hover:text-[#ededed]"
+                    )}
+                  >
+                    {label.toUpperCase()}
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-indicator"
+                        className="absolute -bottom-0.5 left-0 right-0 h-px bg-[#ff2d2d]"
+                        transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                      />
+                    )}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+
+          {/* Language toggle */}
+          <div className="flex items-center gap-0 border border-[#2a2a2a]">
+            {(["en", "es"] as Lang[]).map((l, i) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={cn(
+                  "px-4 py-2.5 font-mono text-[10px] tracking-widest uppercase transition-colors duration-200 focus-visible:outline-none",
+                  lang === l
+                    ? "bg-[#ff2d2d]/10 text-[#ff2d2d]"
+                    : "text-[#6b6b6b] hover:text-[#ededed]",
+                  i === 0 && "border-r border-[#2a2a2a]"
+                )}
+                aria-label={`Switch to ${l === "en" ? "English" : "Español"}`}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -135,7 +156,7 @@ export function Nav() {
             className="border-t border-[#2a2a2a] bg-[#0b0b0b]/95 backdrop-blur-md md:hidden"
           >
             <ul className="flex flex-col px-6 py-4 gap-4">
-              {NAV_LINKS.map(({ label, href }) => {
+              {t.nav.links.map(({ label, href }) => {
                 const id = href.replace("#", "");
                 const isActive = activeSection === id;
                 return (
@@ -143,7 +164,7 @@ export function Nav() {
                     <button
                       onClick={() => handleNav(href)}
                       className={cn(
-                        "font-mono text-[11px] tracking-widest transition-colors",
+                        "w-full py-1 text-left font-mono text-[11px] tracking-widest transition-colors hover:text-[#ededed] active:text-[#ff2d2d]",
                         isActive ? "text-[#ff2d2d]" : "text-[#6b6b6b]"
                       )}
                     >
@@ -152,6 +173,21 @@ export function Nav() {
                   </li>
                 );
               })}
+              {/* Mobile lang toggle */}
+              <li className="flex items-center gap-3 pt-1">
+                {(["en", "es"] as Lang[]).map((l) => (
+                  <button
+                    key={l}
+                    onClick={() => setLang(l)}
+                    className={cn(
+                      "px-3 py-2 font-mono text-[10px] tracking-widest uppercase transition-colors",
+                      lang === l ? "text-[#ff2d2d]" : "text-[#6b6b6b] hover:text-[#ededed]"
+                    )}
+                  >
+                    {l}
+                  </button>
+                ))}
+              </li>
             </ul>
           </motion.div>
         )}

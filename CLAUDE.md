@@ -1,1299 +1,647 @@
-# Portfolio Structure — The Engineer Behind the Machine
+# CLAUDE.md — Portfolio “The Engineer Behind the Machine”
 
-## 1. Visión general
+## 0. Mission
 
-### Concepto creativo
+Build a premium interactive portfolio for a Full Stack Developer specialized in **Backend, Automation, and AI**.
 
-**The Engineer Behind the Machine**
+Core narrative:
 
-Este portfolio no debe sentirse como una web tradicional, sino como un **vehículo digital interactivo**. El usuario entra en una experiencia inmersiva donde cada sección representa una parte esencial de una máquina de alto rendimiento.
+> The Engineer Behind the Machine
 
-La narrativa principal es clara:
+Main message:
 
-> “Mientras otros diseñan la carrocería, yo construyo lo que hace que todo funcione.”
+> I do not just code. I engineer the systems, workflows, and intelligence that make digital products perform.
 
-El portfolio comunica que el perfil no es simplemente el de un full stack developer, sino el de un ingeniero capaz de construir sistemas complejos, automatizaciones, arquitecturas backend, integraciones e inteligencia artificial aplicada.
+The portfolio must feel like entering and operating a **high-performance digital machine**, not a generic personal website.
 
----
+This project should sell engineering capability, not just visual taste.
 
-## 2. Objetivo estratégico
+The user should quickly understand:
 
-El objetivo del portfolio es posicionar al developer como alguien que:
+- What I build.
+- Why it matters.
+- What kind of systems I can own.
+- Why Backend, Automation, and AI make me valuable.
+- How to contact me or evaluate my work.
 
-- Construye sistemas robustos y escalables.
-- Entiende la lógica profunda detrás de productos digitales.
-- Automatiza procesos complejos.
-- Integra APIs, datos e inteligencia artificial.
-- Convierte ideas en máquinas funcionales de alto rendimiento.
+Prioritize:
 
-El mensaje debe alejarse de:
-
-> “Soy full stack developer.”
-
-Y acercarse a:
-
-> “Construyo sistemas complejos que funcionan como máquinas de alto rendimiento.”
+1. Clear professional value.
+2. Strong visual storytelling.
+3. Performance, accessibility, and maintainability.
+4. Interactive elements that explain real skills, not empty decoration.
+5. Simple, focused implementation.
 
 ---
 
-## 3. Principios de experiencia
+## 1. Project Stack
 
-### 3.1 Inmersión
+Use:
 
-El usuario debe sentir que está entrando en un sistema, no visitando una página. Desde la primera pantalla, la experiencia debe simular el encendido de un vehículo digital.
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Framer Motion
+- GSAP ScrollTrigger for complex scroll storytelling
+- Lenis for smooth scrolling
+- Spline or React Three Fiber only when 3D clearly adds value
+- Vercel deployment
 
-### 3.2 Claridad
+Do not add new dependencies unless explicitly requested.
 
-Aunque la estética sea potente, el portfolio debe ser fácil de entender. El storytelling nunca debe ocultar el contenido profesional.
-
-### 3.3 Performance
-
-La experiencia debe sentirse rápida, fluida y precisa. Las animaciones deben aportar narrativa, no bloquear la navegación.
-
-### 3.4 Progresión
-
-El usuario avanza como si estuviera recorriendo distintas partes de una máquina: encendido, dashboard, motor, sistema eléctrico, IA, proyectos, métricas, garaje y contacto.
-
-### 3.5 Control
-
-El usuario debe poder explorar libremente, pero la experiencia debe sugerir un recorrido narrativo principal.
+Before adding any dependency, consider whether the same result can be achieved with the existing stack.
 
 ---
 
-## 4. Arquitectura del sitio
+## 2. Product Direction
 
-### Site Map principal
+The portfolio should feel premium, technical, precise, and confident.
 
-```text
-/
-├── Ignition / Landing
-├── Dashboard / Home
-├── Engine / Backend & Architecture
-├── Electrical System / APIs & Integrations
-├── AI System / Automation & AI
-├── Track / Projects
-├── Telemetry / Metrics
-├── Garage / About
-└── Pit Stop / Contact
-```
+It should communicate that I am not only a developer who builds interfaces, but an engineer who can design, automate, and optimize the systems behind digital products.
 
-### Navegación conceptual
+The experience should feel like operating a machine:
 
-Cada sección representa una parte del vehículo:
-
-| Sección | Metáfora | Área profesional |
-|---|---|---|
-| Ignition | Encendido | Primera impresión |
-| Dashboard | Panel de control | Resumen del perfil |
-| Engine | Motor | Backend y lógica de negocio |
-| Electrical System | Cableado / sistema eléctrico | APIs e integraciones |
-| AI System | Asistente inteligente | Automatización e IA |
-| Track | Circuito | Proyectos y experiencia |
-| Telemetry | Datos de carrera | Métricas e impacto |
-| Garage | Taller / origen | Sobre mí y forma de trabajar |
-| Pit Stop | Parada técnica | Contacto y CTA final |
+- Systems activating.
+- Workflows connecting.
+- Data moving.
+- Intelligence being layered on top.
+- Performance being measured and improved.
+- Follow `STYLE_GUIDE` when adding something.
 
 ---
 
-## 5. Estructura de páginas y secciones
+## 3. Target Audience
 
-## 5.1 Ignition — Landing / Encendido
+The portfolio is aimed at:
 
-### Objetivo
+- Recruiters.
+- Hiring managers.
+- Startup founders.
+- Technical leads.
+- Potential freelance or consulting clients.
+- Other developers evaluating my work.
 
-Crear una primera impresión memorable y establecer el concepto del portfolio desde el primer segundo.
+The tone should be:
 
-### Mensaje principal
+- Professional.
+- Direct.
+- Confident.
+- Human.
+- Technical without being confusing.
+- Premium without sounding arrogant.
 
-> “You are entering the machine.”
+Avoid generic phrases like:
 
-El usuario no está entrando en una web, sino activando una experiencia.
+- “Passionate developer.”
+- “I love creating amazing digital experiences.”
+- “Highly motivated individual.”
+- “I build beautiful websites.”
 
-### Contenido
+Prefer specific, value-driven language:
 
-- Nombre del developer.
-- Rol principal: **Full Stack Developer specialized in Backend, Automation & AI**.
-- Tagline breve y potente.
-- Botón principal: **Start Engine**.
-- Opción secundaria discreta: **Skip Intro**.
-
-### Visuales
-
-- Fondo oscuro casi negro.
-- Luces de dashboard apagadas.
-- Elementos mínimos visibles: líneas del vehículo, reflejos metálicos o HUD apagado.
-- Al hacer click en “Start Engine”, el sistema se activa.
-
-### Interacción
-
-- Click en “Start Engine”.
-- Animación de encendido: luces, vibración sutil, sonido opcional, indicadores activándose.
-- Transición hacia el Dashboard.
-
-### Componentes
-
-- Hero fullscreen.
-- Botón CTA principal.
-- Animación de arranque.
-- Overlay de sistema iniciándose.
-- Indicador de carga tipo RPM.
-
-### Decisión UX
-
-La intro debe durar poco. Debe ser impactante, pero no molesta. La opción “Skip Intro” evita fricción para recruiters o usuarios recurrentes.
+- “I build backend systems that automate business workflows.”
+- “I connect APIs, data, and AI into production-ready tools.”
+- “I design systems that reduce manual work and improve operational speed.”
 
 ---
 
-## 5.2 Dashboard — Home interactivo
+### 5.2 System Overview
 
-### Objetivo
+Purpose:
 
-Funcionar como centro de control del portfolio. Desde aquí el usuario entiende rápidamente quién eres, qué haces y hacia dónde puede navegar.
+Explain my capabilities as connected parts of one system.
 
-### Mensaje principal
+Suggested capability groups:
 
-> “This is the control panel of the machine.”
+- Backend Engineering
+- Automation Workflows
+- AI Integration
+- Frontend Interfaces
+- APIs and Integrations
+- Performance and Deployment
 
-### Contenido
+This section should show how the skills connect, not just list technologies.
 
-- Resumen profesional corto.
-- Principales áreas de expertise:
-  - Backend.
-  - Architecture.
-  - APIs.
-  - Automation.
-  - AI.
-  - Data.
-- Métricas destacadas:
-  - +80% development speed.
-  - +70% configuration reduction.
-  - +40% deployment speed.
-- Accesos visuales a las secciones principales.
-
-### Visuales
-
-- Panel de coche futurista.
-- Velocímetro para velocidad de entrega.
-- RPM para intensidad del sistema.
-- Indicadores para skills.
-- Mapa del vehículo con zonas clicables.
-
-### Interacción
-
-- Click en partes del dashboard para navegar.
-- Hover sobre indicadores para revelar detalles.
-- Scroll vertical como aceleración hacia la siguiente sección.
-
-### Componentes
-
-- Interactive dashboard.
-- Skill indicators.
-- Metric widgets.
-- Navigation map.
-- Cards de secciones.
-
-### Decisión UX
-
-Debe ser la página más clara del portfolio. Aunque sea visualmente impactante, tiene que responder rápidamente a tres preguntas:
-
-1. Quién eres.
-2. Qué haces.
-3. Por qué eres diferente.
+The user should understand that I can design complete systems from logic to interface.
 
 ---
 
-## 5.3 Engine — Backend & Architecture
+### 5.3 Projects
 
-### Objetivo
+Purpose:
 
-Mostrar la capacidad de construir la lógica interna de productos digitales: backend, arquitectura, APIs, bases de datos y sistemas escalables.
+Prove capability through real work.
 
-### Mensaje principal
+Projects should be presented as case studies, not just cards.
 
-> “The engine is where performance is built.”
+Each project should include:
 
-### Contenido
+- Problem.
+- My role.
+- Technical solution.
+- Stack.
+- Backend, Automation, or AI relevance.
+- Outcome or measurable impact when available.
+- Demo link if available.
+- GitHub link if available.
 
-- Stack backend:
-  - Node.js.
-  - Java.
-  - APIs REST.
-  - GraphQL.
-  - Databases.
-  - Business logic.
-- Explicación de cómo construyes sistemas robustos.
-- Casos reales vinculados a Pathmonk, Fitenium u otros proyectos.
-- Diagramas de flujo de datos.
+Each project must answer:
 
-### Visuales
+> Why does this prove I can build valuable systems?
 
-- Motor esquemático o 3D.
-- Partes del motor etiquetadas como módulos técnicos.
-- Requests moviéndose como energía o combustible.
-- Flujos de datos animados.
+Avoid vague descriptions such as:
 
-### Interacción
+- “A modern web app built with React.”
+- “A cool project using AI.”
+- “A responsive website.”
 
-- El usuario puede explorar partes del motor.
-- Hover/click sobre cada pieza para ver una explicación.
-- Animación de request → processing → response.
+Prefer concrete descriptions:
 
-### Componentes
-
-- 3D engine / schematic engine.
-- Code snippets controlados.
-- Architecture cards.
-- Data flow animation.
-- Case study preview.
-
-### Decisión UX
-
-El objetivo no es enseñar mucho código, sino explicar complejidad de forma visual y estratégica. El usuario debe entender que sabes construir sistemas sólidos aunque no sea técnico.
+- “Automated a manual lead qualification workflow using API integrations and AI-assisted scoring.”
+- “Built a backend service that synchronizes data between external platforms.”
+- “Designed a dashboard that exposes operational metrics from automated workflows.”
 
 ---
 
-## 5.4 Electrical System — APIs & Integrations
+### 5.4 Skills Matrix
 
-### Objetivo
+Purpose:
 
-Mostrar cómo conectas sistemas, herramientas, servicios externos y plataformas mediante APIs e integraciones.
+Show technical range in an organized way.
 
-### Mensaje principal
+Group skills by area:
 
-> “A powerful machine needs every system connected.”
+- Backend
+- Automation
+- AI
+- Frontend
+- Databases
+- DevOps
+- APIs and Integrations
+- Tooling
 
-### Contenido
+Avoid a random wall of logos.
 
-- APIs externas.
-- Integraciones entre plataformas.
-- Webhooks.
-- Sistemas internos conectados.
-- Sincronización de datos.
-- Automatización entre servicios.
+Skills should feel like modules inside the machine.
 
-### Visuales
+Each group should explain what the skill enables, not only name the tool.
 
-- Cableado eléctrico del vehículo.
-- Nodos conectados.
-- Pulsos de energía moviéndose entre módulos.
-- Mapa de integraciones.
+Example:
 
-### Interacción
-
-- Click en nodos para revelar integraciones.
-- Animaciones de conexión/desconexión.
-- Visualización de cómo viajan los datos entre sistemas.
-
-### Componentes
-
-- Network graph.
-- Integration cards.
-- API flow timeline.
-- Webhook simulation.
-
-### Decisión UX
-
-Esta sección debe demostrar que no solo construyes piezas aisladas, sino ecosistemas conectados.
+- Node.js — backend APIs, services, and business logic.
+- PostgreSQL — relational data modeling and reliable persistence.
+- OpenAI APIs — intelligent workflows, assistants, and data processing.
+- n8n / Make / Zapier — business process automation.
+- Docker — reproducible environments and deployment workflows.
 
 ---
 
-## 5.5 AI System — Automation & Artificial Intelligence
+### 5.5 Process
 
-### Objetivo
+Purpose:
 
-Presentar el diferencial más fuerte: automatización, agentes IA, workflows y uso práctico de inteligencia artificial.
+Explain how I think and work.
 
-### Mensaje principal
+Possible structure:
 
-> “Intelligence turns systems into autonomous machines.”
+1. Understand the business process.
+2. Map the system and data flow.
+3. Design the backend or automation logic.
+4. Build the interface or integration layer.
+5. Test, optimize, and deploy.
+6. Measure, improve, and maintain.
 
-### Contenido
-
-- Automatizaciones con IA.
-- Agentes inteligentes.
-- Workflows con n8n o sistemas similares.
-- Uso de Claude Code, ChatGPT APIs u otras herramientas IA.
-- Resultados medibles:
-  - +70% eficiencia.
-  - +80% velocidad de desarrollo.
-- Ejemplos de automatizaciones reales.
-
-### Visuales
-
-- HUD futurista.
-- Nodos conectándose.
-- Cerebro/sistema central del vehículo.
-- Simulación de workflow en vivo.
-
-### Interacción
-
-- El usuario puede activar un workflow.
-- Cada paso del workflow se ilumina.
-- Se muestra input → processing → output.
-- Posible mini demo tipo “Ask the AI Assistant”.
-
-### Componentes
-
-- Workflow simulator.
-- AI agent cards.
-- Automation timeline.
-- Before/after comparison.
-- Interactive prompt panel.
-
-### Decisión UX
-
-Esta sección debe sentirse como el cerebro del portfolio. Debe ser una de las partes más memorables porque conecta tecnología actual con impacto real.
+This section should show that I think in systems, not isolated screens.
 
 ---
 
-## 5.6 Track — Projects / Experiencia
+### 5.6 About
 
-### Objetivo
+Purpose:
 
-Mostrar experiencia real a través de proyectos convertidos en “carreras” o circuitos.
+Make the portfolio human without weakening the technical positioning.
 
-### Mensaje principal
+The About section should be concise.
 
-> “Every project is a race with constraints, challenges and results.”
+It should explain:
 
-### Contenido
+- Who I am.
+- What kind of problems I enjoy solving.
+- Why I focus on Backend, Automation, and AI.
+- What makes my approach different.
 
-Cada proyecto debe presentarse como una carrera con:
-
-- Contexto.
-- Problema.
-- Rol.
-- Stack utilizado.
-- Decisiones técnicas.
-- Obstáculos.
-- Resultado.
-- Métricas.
-
-### Proyectos sugeridos
-
-#### Pathmonk
-
-- Circuito complejo.
-- Enfoque: IA, workflows, backend, automatización.
-- Narrativa: optimización de sistemas inteligentes.
-
-#### Fitenium
-
-- Circuito fitness / performance.
-- Enfoque: producto, experiencia de usuario, backend, datos.
-- Narrativa: crear una plataforma funcional orientada a usuarios.
-
-#### Contactel
-
-- Circuito legacy → modernización.
-- Enfoque: mejora de procesos, sistemas existentes, integraciones.
-- Narrativa: transformar una máquina antigua en un sistema más eficiente.
-
-### Visuales
-
-- Scroll horizontal como avance en pista.
-- Cada proyecto es un circuito.
-- Cada checkpoint representa un hito.
-- Líneas de velocidad y mapas de carrera.
-
-### Interacción
-
-- Scroll horizontal.
-- Click en checkpoints.
-- Expansión de case studies.
-- Comparativa antes/después.
-
-### Componentes
-
-- Horizontal scroll section.
-- Project cards.
-- Circuit map.
-- Timeline checkpoints.
-- Case study modal or dedicated view.
-
-### Decisión UX
-
-Los proyectos deben ser entendibles en dos niveles:
-
-1. Vista rápida para recruiters.
-2. Profundidad para perfiles técnicos.
+Avoid long autobiographical text.
 
 ---
 
-## 5.7 Telemetry — Metrics & Impact
+### 5.7 Contact
 
-### Objetivo
+Purpose:
 
-Convertir el impacto profesional en datos visuales. Esta sección refuerza credibilidad y resultados.
+Make the next step obvious.
 
-### Mensaje principal
+Include clear calls to action:
 
-> “Performance is measured.”
+- Contact me.
+- View projects.
+- Download CV.
+- Visit GitHub.
+- Connect on LinkedIn.
 
-### Contenido
-
-- Métricas clave:
-  - +80% speed improvement.
-  - +70% reduction in configuration time.
-  - +40% faster deployment.
-- Contexto de cada métrica.
-- Qué problema resolvía.
-- Cómo se logró.
-- Qué impacto tuvo.
-
-### Visuales
-
-- Telemetría tipo F1.
-- Gráficos en tiempo real.
-- Líneas de rendimiento.
-- Comparativas before/after.
-
-### Interacción
-
-- Los gráficos se activan con scroll.
-- Hover sobre cada métrica para ver explicación.
-- Animaciones de contador.
-
-### Componentes
-
-- Metric cards.
-- Animated counters.
-- Performance charts.
-- Before/after panels.
-- Telemetry dashboard.
-
-### Decisión UX
-
-Esta sección debe ser muy clara y cuantificable. Es el lugar donde el storytelling se convierte en prueba.
+The contact section should feel like the final activation point of the machine.
 
 ---
 
-## 5.8 Garage — About
+## 6. Content Rules
 
-### Objetivo
+Content must be specific, credible, and value-oriented.
 
-Humanizar el portfolio y explicar la filosofía de trabajo.
+Every section should answer at least one of these questions:
 
-### Mensaje principal
+- What can I build?
+- What problem does it solve?
+- Why does it matter?
+- What proof do I have?
+- What should the visitor do next?
 
-> “Every machine reflects the engineer who built it.”
+Use strong but believable language.
 
-### Contenido
+Avoid excessive hype.
 
-- Quién eres.
-- Cómo trabajas.
-- Qué tipo de problemas te interesan.
-- Filosofía técnica.
-- Valores profesionales:
-  - Claridad.
-  - Performance.
-  - Automatización.
-  - Escalabilidad.
-  - Mejora continua.
-- Herramientas favoritas.
+Good tone:
 
-### Visuales
+> I build systems that connect backend logic, automation, and AI to reduce manual work and improve product performance.
 
-- Garaje oscuro y elegante.
-- Piezas del vehículo sobre una mesa.
-- Herramientas técnicas representadas visualmente.
-- Ambiente más humano y menos intenso.
+Bad tone:
 
-### Interacción
+> I create stunning digital experiences with passion and innovation.
 
-- Hover sobre herramientas para ver skills.
-- Timeline personal/profesional.
-- Modo “behind the scenes”.
+Do not use filler text.
 
-### Componentes
+Do not add fake metrics, fake clients, or fake achievements.
 
-- About card.
-- Philosophy section.
-- Tool stack grid.
-- Timeline.
-- Personal quote.
+If real numbers are unavailable, describe impact qualitatively.
 
-### Decisión UX
+Example:
 
-Después de secciones intensas y técnicas, esta parte debe bajar ligeramente el ritmo. Debe transmitir confianza, criterio y personalidad.
+- “Reduced repetitive manual steps.”
+- “Centralized scattered workflow logic.”
+- “Improved visibility into operational data.”
+- “Connected multiple tools into one automated flow.”
 
 ---
 
-## 5.9 Pit Stop — Contact
+## 7. Interaction and Motion Rules
 
-### Objetivo
+Motion must support the machine narrative.
 
-Cerrar la experiencia con una acción clara: contactar, colaborar o iniciar una conversación.
+Use animation for:
 
-### Mensaje principal
+- Revealing system layers.
+- Showing data or workflow movement.
+- Explaining automation pipelines.
+- Creating a premium sense of precision.
+- Guiding attention between sections.
 
-> “Let’s build something fast.”
+Use Framer Motion for:
 
-### Contenido
+- Component-level animations.
+- Reveals.
+- Hover states.
+- Micro-interactions.
+- Page or section transitions.
 
-- CTA principal.
-- Email.
-- LinkedIn.
-- GitHub.
-- Posible descarga de CV.
-- Formulario simple.
+Use GSAP ScrollTrigger only for:
 
-### Visuales
+- Complex scroll storytelling.
+- Timeline-based sequences.
+- Advanced pinned sections.
+- System-flow animations that would be difficult with Framer Motion alone.
 
-- Pit stop minimalista.
-- Luces de boxes.
-- Sensación de parada rápida y eficiente.
+Use Lenis for smooth scrolling only if it improves the experience and does not harm usability.
 
-### Interacción
+Use Spline or React Three Fiber only when the 3D element clearly supports the concept.
 
-- Formulario con estilo consola.
-- Confirmación animada tipo “Transmission sent”.
-- Hover en CTA con efecto boost.
+Avoid:
 
-### Componentes
+- Animating every element.
+- Scroll hijacking.
+- Long intro animations.
+- Heavy 3D for decoration.
+- Interactions that confuse navigation.
+- Effects that hurt performance or accessibility.
 
-- Contact form.
-- CTA button.
-- Social links.
-- Resume download.
-- Success state animation.
-
-### Decisión UX
-
-Debe ser extremadamente simple. Después de una experiencia visual potente, el contacto no debe tener fricción.
-
----
-
-## 6. Flujo de usuario
-
-### Flujo narrativo principal
-
-```text
-Ignition
-→ Dashboard
-→ Engine
-→ Electrical System
-→ AI System
-→ Track
-→ Telemetry
-→ Garage
-→ Pit Stop
-```
-
-### Entrada
-
-El usuario entra en una pantalla oscura. Solo ve el botón **Start Engine**. Al activarlo, el portfolio se enciende y aparece el dashboard principal.
-
-### Exploración
-
-Desde el Dashboard, el usuario puede:
-
-- Seguir el recorrido guiado mediante scroll.
-- Saltar directamente a una sección usando el mapa del vehículo.
-- Explorar partes interactivas del sistema.
-
-### Conversión
-
-La experiencia termina en Pit Stop, donde el CTA invita a contactar:
-
-> “Let’s build something fast.”
+The site should feel engineered, not chaotic.
 
 ---
 
-## 7. Experiencia interactiva
+## 8. Performance Rules
 
-## 7.1 Scroll como conducción
+Performance is part of the product quality.
 
-El scroll debe sentirse como movimiento:
+Follow these rules:
 
-- Scroll hacia abajo: aceleración.
-- Scroll hacia arriba: frenada.
-- Cambios de sección: curvas o cambios de marcha.
-- Llegada a proyectos: entrada a circuito.
+- Keep bundle size under control.
+- Avoid unnecessary client components.
+- Prefer server components when possible.
+- Use dynamic imports for heavy interactive sections.
+- Lazy-load 3D, videos, and large media.
+- Optimize images.
+- Avoid unnecessary re-renders.
+- Prefer CSS and Tailwind effects before heavy JavaScript.
+- Do not sacrifice readability for visual effects.
+- Maintain strong Lighthouse scores.
 
-### Recursos visuales
+Interactive sections should be impressive, but not expensive without reason.
 
-- Motion blur sutil.
-- Líneas de luz tipo autopista.
-- Parallax de profundidad.
-- Elementos técnicos ensamblándose.
-
----
-
-## 7.2 Transiciones
-
-### Ignition → Dashboard
-
-Encendido del sistema. Luces, sonido sutil, indicadores cargando.
-
-### Dashboard → Engine
-
-Zoom hacia el interior del vehículo, entrando en el motor.
-
-### Engine → Electrical System
-
-Flujos de energía saliendo del motor hacia el sistema eléctrico.
-
-### Electrical System → AI System
-
-Los nodos conectados se transforman en una red inteligente.
-
-### AI System → Track
-
-El sistema calcula la ruta y lanza al usuario al circuito de proyectos.
-
-### Track → Telemetry
-
-Los resultados de las carreras se convierten en datos.
-
-### Telemetry → Garage
-
-La intensidad baja y el usuario entra en el espacio personal del constructor.
-
-### Garage → Pit Stop
-
-Cierre limpio con CTA directo.
+If a visual effect creates performance issues, simplify it.
 
 ---
 
-## 7.3 Microinteracciones
+## 9. Accessibility Rules
 
-- Hover en botones: vibración sutil tipo motor.
-- Click en CTA: efecto boost.
-- Loading: revoluciones subiendo.
-- Inputs: consola de coche.
-- Cards: iluminación lateral al pasar el cursor.
-- Skills: indicadores que se activan.
-- Métricas: contadores animados.
-- Links: transición tipo señal eléctrica.
+The portfolio must remain accessible and usable.
 
----
+Follow these rules:
 
-## 8. Sistema visual
+- Use semantic HTML where possible.
+- Maintain strong color contrast.
+- Keep text readable on all screen sizes.
+- Ensure interactive elements are keyboard accessible.
+- Do not rely only on color to communicate meaning.
+- Add meaningful alt text for important images.
+- Respect reduced motion preferences where possible.
+- Avoid motion that could cause discomfort.
+- Ensure links and buttons have clear labels.
 
-## 8.1 Estilo general
-
-El estilo debe combinar:
-
-- Tesla UI.
-- Porsche Configurator.
-- F1 dashboards.
-- HUD futurista.
-- Interfaces de sistemas técnicos.
-
-La dirección visual debe ser premium, oscura, precisa y tecnológica.
+Premium design should not reduce usability.
 
 ---
 
-## 8.2 Paleta de color
+## 10. SEO Rules
 
-### Base
+Maintain basic SEO quality.
 
-- Negro profundo: `#0B0B0B`
-- Gris carbón: `#151515`
-- Gris metálico: `#2A2A2A`
-- Blanco suave: `#EDEDED`
+Include:
 
-### Acentos
+- Clear page title.
+- Strong meta description.
+- Correct heading hierarchy.
+- Descriptive section content.
+- Clean URLs.
+- Useful alt text.
+- Open Graph metadata when relevant.
+- Structured and readable content.
 
-- Rojo velocidad: `#FF2D2D`
-- Azul eléctrico / IA: `#00D4FF`
-- Verde sistema activo: `#3DFF8F`
+The website should clearly communicate:
 
-### Uso recomendado
+- Full Stack Developer.
+- Backend.
+- Automation.
+- AI.
+- Portfolio.
+- Projects.
+- Systems engineering.
 
-- Rojo: CTAs, velocidad, energía, acción.
-- Azul: IA, datos, tecnología, automatización.
-- Verde: estados activos, éxito, sistemas funcionando.
-- Gris metálico: estructura, fondos, tarjetas.
-
----
-
-## 8.3 Tipografía
-
-### Headings
-
-Opciones recomendadas:
-
-- Space Grotesk.
-- Orbitron.
-- Eurostile.
-
-Uso recomendado:
-
-- Space Grotesk como opción más equilibrada.
-- Orbitron solo para detalles técnicos o HUD, no para todo el texto.
-
-### Body
-
-Opciones recomendadas:
-
-- Inter.
-- Manrope.
-
-Uso recomendado:
-
-- Inter para máxima legibilidad.
-- Manrope para un tono más editorial y premium.
+Avoid keyword stuffing.
 
 ---
 
-## 8.4 Motion design
+## 11. Code Principles
 
-El motion debe sentirse como una máquina precisa:
+Follow these principles:
 
-- Rápido, pero no agresivo.
-- Fluido, pero no decorativo.
-- Técnico, pero no frío.
+- Simplicity first.
+- Minimal impact.
+- No unnecessary abstractions.
+- No unnecessary dependencies.
+- Clear naming.
+- Maintainable components.
+- Mobile-first implementation.
+- Reusable components only when reuse is real.
+- Keep business/content data separate from presentation when useful.
+- Avoid touching unrelated files.
+- Avoid large refactors unless required.
 
-### Reglas de motion
+When creating components:
 
-- Las animaciones largas solo deben aparecer en momentos narrativos clave.
-- Las microinteracciones deben ser rápidas.
-- Evitar animaciones infinitas excesivas.
-- Priorizar transform y opacity por performance.
+- Keep them focused.
+- Use clear props.
+- Avoid overly clever logic.
+- Prefer composition over complex configuration.
+- Keep styling readable.
 
----
+When using TypeScript:
 
-## 8.5 Realismo vs abstracción
-
-La recomendación es usar una mezcla:
-
-- Vehículo abstracto, no hiperrealista.
-- HUD futurista.
-- Motor esquemático.
-- Datos y sistemas visuales.
-
-Evitar que parezca un videojuego de coches. El vehículo es una metáfora para explicar ingeniería, no el tema final del portfolio.
-
----
-
-## 9. Elementos diferenciales
-
-### 9.1 Night Drive Mode
-
-Modo visual alternativo más cinematográfico:
-
-- Fondo más oscuro.
-- Luces de carretera.
-- Menos UI.
-- Más sensación inmersiva.
-
-### 9.2 Turbo Mode
-
-Easter egg activado con Konami Code o una interacción oculta.
-
-Efecto:
-
-- Animaciones más rápidas.
-- Cambio de acentos visuales.
-- Mensaje oculto tipo:
-
-> “Turbo mode activated.”
-
-### 9.3 AI Co-Pilot
-
-Mini asistente dentro del portfolio que puede guiar al usuario:
-
-- “Show me backend experience.”
-- “Show me AI projects.”
-- “Take me to metrics.”
-
-Debe ser simple y controlado. No necesita ser una IA real en la primera versión.
-
-### 9.4 Live Workflow Simulation
-
-Una demo visual donde el usuario activa un workflow:
-
-```text
-Input
-→ AI Processing
-→ API Call
-→ Data Transformation
-→ Output
-```
-
-Esto refuerza automatización e IA de forma muy visual.
-
-### 9.5 System Health Indicator
-
-Indicador persistente en la UI:
-
-```text
-System: Online
-Performance: High
-Automation: Active
-AI Core: Ready
-```
-
-Sirve como elemento de ambientación y navegación.
+- Avoid `any` unless there is a strong reason.
+- Define useful types for content and components.
+- Keep types simple and close to where they are used when appropriate.
 
 ---
 
-## 10. Recomendaciones técnicas
+## 12. Design System Guidelines
 
-## 10.1 Stack
+Use a consistent design language.
 
-### Core
+Preferred UI patterns:
 
-- Next.js.
-- TypeScript.
-- Tailwind CSS.
-- shadcn/ui.
-- Vercel.
+- Cards as system modules.
+- Lines as data connections.
+- Pills as labels or system tags.
+- Grids as technical structure.
+- Subtle glows as active states.
+- Monospace accents for machine/interface details.
+- Clear section headers.
+- Strong visual hierarchy.
 
-### Animación
+Use shadcn/ui when it helps create reliable, accessible UI primitives.
 
-- GSAP ScrollTrigger para storytelling principal.
-- Framer Motion para microinteracciones.
-- Lenis para smooth scroll.
+Do not overuse prebuilt components if custom layout is more appropriate.
 
-### 3D / visuales avanzados
-
-- Spline para prototipado rápido.
-- React Three Fiber para control avanzado.
-
-### Datos y visualizaciones
-
-- Recharts para gráficas simples.
-- SVG custom para HUDs, circuitos y flujos.
+The interface should feel custom and intentional.
 
 ---
 
-## 10.2 Performance
+## 12.1 Typography Scale
 
-### Prioridades
+Use a consistent typography scale across the portfolio.
 
-- Lazy load de componentes pesados.
-- 3D solo donde aporte valor real.
-- Fallbacks visuales para móviles.
-- Animaciones optimizadas con transform y opacity.
-- Evitar exceso de blur pesado.
-- Reducir uso de video si no es necesario.
+The typography should feel premium, technical, and precise. Text must remain readable on all screen sizes.
 
-### Mobile
+### Font Direction
 
-En móvil, la experiencia debe simplificarse:
+Use:
 
-- Menos 3D.
-- Navegación por cards.
-- Scroll vertical más directo.
-- Animaciones reducidas.
-- Métricas y proyectos priorizados.
+- Sans-serif for primary text.
+- Monospace only for technical accents, labels, system codes, tags, or interface details.
 
----
+Avoid using too many font sizes or font styles.
 
-## 11. Estructura técnica sugerida
+### Recommended Type Scale
 
-```text
-src/
-├── app/
-│   ├── page.tsx
-│   └── layout.tsx
-├── components/
-│   ├── sections/
-│   │   ├── Ignition.tsx
-│   │   ├── Dashboard.tsx
-│   │   ├── Engine.tsx
-│   │   ├── ElectricalSystem.tsx
-│   │   ├── AISystem.tsx
-│   │   ├── TrackProjects.tsx
-│   │   ├── Telemetry.tsx
-│   │   ├── Garage.tsx
-│   │   └── PitStop.tsx
-│   ├── ui/
-│   ├── motion/
-│   ├── 3d/
-│   └── navigation/
-├── data/
-│   ├── projects.ts
-│   ├── metrics.ts
-│   └── skills.ts
-├── hooks/
-│   ├── useScrollProgress.ts
-│   └── useReducedMotion.ts
-├── lib/
-│   ├── animations.ts
-│   └── constants.ts
-└── styles/
-    └── globals.css
-```
+Use Tailwind CSS responsive classes.
 
----
+#### Hero
 
-## 12. Roadmap de desarrollo
+- Hero eyebrow / label:
+  - `text-xs md:text-sm`
+  - uppercase
+  - tracking-wide or tracking-widest
+  - monospace optional
 
-## Fase 1 — MVP sólido
+- Hero headline:
+  - `text-4xl sm:text-5xl md:text-6xl lg:text-7xl`
+  - font-bold or font-semibold
+  - tight line height: `leading-[0.95]` or `leading-tight`
 
-  ---                                                                                                                                                                                                       
-  Phase 1 Plan — MVP Portfolio                                                                                                                                                                              
-                                                                                                                                                                                                            
-  Upfront decisions (lock these first)                                                                                                                                                                      
-                                                                                                                                                                                                            
-  - next/font/google for Space Grotesk + Inter (no layout shift)                                                                                                                                            
-  - All colors as CSS custom properties + Tailwind extensions (enables Night Drive Mode later)
-  - All Framer Motion variants centralized in lib/animations.ts                                                                                                                                             
-  - Server Components by default — only interactive pieces use "use client"
-  - CSS snap scroll for Track section (GSAP horizontal pinning is Phase 2)                                                                                                                                  
-  - Resend for contact form via a Next.js Route Handler                                                                                                                                                     
-                                                                                                                                                                                                            
-  ---                                                                                                                                                                                                       
-  Build order (10 steps)                                                                                                                                                                                    
-                        
-  ┌─────┬─────────────────────────┬─────────────────────────────────────────────────────────────────┬───────┐
-  │  #  │          Step           │                         Sections built                          │ ~Time │                                                                                               
-  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤
-  │ 1   │ Foundation              │ Scaffold, Tailwind config, CSS variables, fonts, providers      │ 2h    │                                                                                               
-  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤
-  │ 2   │ Navigation + Health Bar │ Fixed nav, SystemHealthBar HUD strip                            │ 1h    │                                                                                               
-  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
-  │ 3   │ Ignition                │ Fullscreen landing + engine boot animation                      │ 3h    │                                                                                               
-  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
-  │ 4   │ Dashboard               │ Metrics, skill indicators, expertise areas                      │ 4h    │
-  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
-  │ 5   │ Engine                  │ Backend showcase, architecture diagram, case study previews     │ 3h    │
-  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
-  │ 6   │ AI System               │ Workflow simulator, before/after metrics, agent cards           │ 4h    │
-  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
-  │ 7   │ Track                   │ Horizontal scroll project cards (Pathmonk, Fitenium, Contactel) │ 3h    │
-  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
-  │ 8   │ Pit Stop                │ Contact form with terminal styling, Resend, success animation   │ 2h    │
-  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
-  │ 9   │ Polish                  │ Responsive audit, reduced motion, meta tags, Lighthouse         │ 3h    │
-  ├─────┼─────────────────────────┼─────────────────────────────────────────────────────────────────┼───────┤                                                                                               
-  │ 10  │ Deploy                  │ Vercel deploy, env vars, production test                        │ 1h    │
-  └─────┴─────────────────────────┴─────────────────────────────────────────────────────────────────┴───────┘                                                                                               
-   
-  Total: ~26h of focused work                                                                                                                                                                               
-                  
-  ---                                                                                                                                                                                                       
-  Explicitly deferred (do NOT start these yet)
-                                                                                                                                                                                                            
-  - Electrical System, Telemetry, Garage sections → Phase 2
-  - GSAP ScrollTrigger, scroll pinning, parallax → Phase 2                                                                                                                                                  
-  - 3D (Spline/R3F), AI Co-Pilot, Turbo Mode easter egg → Phase 3                                                                                                                                           
-  - Case study detail pages → Phase 2                                                                                                                                                                       
-                                                                                                                                                                                                            
-  ---  
+- Hero supporting text:
+  - `text-base md:text-lg lg:text-xl`
+  - max width around `max-w-2xl`
+  - relaxed line height: `leading-relaxed`
+
+#### Section Headers
+
+- Section eyebrow:
+  - `text-xs md:text-sm`
+  - uppercase
+  - tracking-widest
+  - muted color
+
+- Section title:
+  - `text-3xl md:text-4xl lg:text-5xl`
+  - font-semibold
+  - tight line height
+
+- Section description:
+  - `text-base md:text-lg`
+  - max width around `max-w-2xl`
+  - muted color
+
+#### Cards and Modules
+
+- Card title:
+  - `text-lg md:text-xl`
+  - font-semibold
+
+- Card description:
+  - `text-sm md:text-base`
+  - muted color
+  - `leading-relaxed`
+
+- Card metadata / tags:
+  - `text-xs`
+  - uppercase optional
+  - tracking-wide
+
+#### Navigation
+
+- Nav links:
+  - `text-sm`
+  - font-medium
+
+- Buttons:
+  - `text-sm md:text-base`
+  - font-medium
+
+#### Body Text
+
+- Default paragraph:
+  - `text-base`
+  - `leading-7`
+
+- Small supporting text:
+  - `text-sm`
+  - muted color
+
+- Technical labels:
+  - `text-xs`
+  - monospace
+  - uppercase
+  - tracking-wider
+
+### Rules
+
+- Do not invent random font sizes per component.
+- Prefer the defined scale unless there is a clear design reason.
+- Keep line length readable with `max-w-*`.
+- Hero text may be large, but must not break awkwardly on mobile.
+- Avoid text smaller than `text-xs`.
+- Maintain strong contrast for all important content.
+- Use `text-muted-foreground` or equivalent only for secondary content.
 
 ---
 
-## Fase 2 — Storytelling avanzado
+## 13. Workflow Orchestration
 
-Objetivo: convertir la web en experiencia inmersiva.
+### 13.1 Plan Mode Default
 
-Incluye:
+For simple tasks, implement directly.
 
-- GSAP ScrollTrigger.
-- Transiciones narrativas.
-- Scroll como conducción.
-- Telemetry dashboard.
-- Electrical System.
-- Mejoras visuales del dashboard.
+Simple tasks include:
 
----
+- Text changes.
+- Small styling adjustments.
+- Adding or editing a link.
+- Minor spacing changes.
+- Small component tweaks.
 
-## Fase 3 — Wow effect
+For non-trivial tasks, enter plan mode first.
 
-Objetivo: hacer el portfolio memorable.
+Non-trivial tasks include:
 
-Incluye:
+- New major section.
+- Architecture changes.
+- Large visual changes.
+- Refactors.
+- New animation systems.
+- SEO structure changes.
+- Data/content model changes.
+- Bug reports with unclear cause.
 
-- Spline o React Three Fiber.
-- AI Co-Pilot.
-- Live Workflow Simulation.
-- Turbo Mode.
-- Night Drive Mode.
-- Sonido opcional.
+For non-trivial tasks:
 
----
+1. Create or update `tasks/todo.md`.
+2. Write a clear plan with checkable items.
+3. Include verification steps.
+4. Explain the approach before implementation.
+5. Then implement in focused steps.
 
-## 13. Prioridad de contenido
-
-Para evitar que el portfolio se convierta solo en una pieza visual, el contenido debe priorizarse así:
-
-1. Qué problema resuelves.
-2. Qué construiste.
-3. Cómo lo construiste.
-4. Qué impacto tuvo.
-5. Qué tecnologías usaste.
-
-La tecnología debe apoyar el valor, no reemplazarlo.
+If implementation diverges from the plan, stop and re-plan.
 
 ---
 
-## 14. Copy base recomendado
+### 13.2 Task Management
 
-### Hero
+Use `tasks/todo.md` for non-trivial work.
 
-```text
-The Engineer Behind the Machine
-```
+The file should include:
 
-```text
-Full Stack Developer specialized in Backend, Automation & AI.
-I build the systems, workflows and intelligence that make digital products perform.
-```
+- Task title.
+- Goal.
+- Plan.
+- Checklist.
+- Verification steps.
+- Review section after completion.
 
-CTA:
+Example structure:
 
-```text
-Start Engine
-```
+```md
+# Task: Add Projects Section
 
-Secondary CTA:
+## Goal
 
-```text
-View Projects
-```
+Create a project section that presents work as engineering case studies.
 
----
+## Plan
 
-### Backend
+- [ ] Define project content structure.
+- [ ] Create reusable project card component.
+- [ ] Build responsive projects section.
+- [ ] Add motion carefully.
+- [ ] Verify responsive behavior.
+- [ ] Run lint and build.
 
-```text
-I design the internal logic that keeps products running: APIs, services, data flows and scalable backend systems.
-```
+## Review
 
----
-
-### AI / Automation
-
-```text
-I turn repetitive processes into intelligent workflows powered by automation and AI.
-```
-
----
-
-### Projects
-
-```text
-Each project is a track: different constraints, different challenges, one goal — performance.
-```
-
----
-
-### Metrics
-
-```text
-Great systems are not only built. They are measured.
-```
-
----
-
-### Contact
-
-```text
-Let’s build something fast.
-```
-
----
-
-## 15. Conclusión
-
-Este portfolio debe equilibrar tres capas:
-
-1. **Narrativa:** el usuario entra en una máquina digital.
-2. **Claridad profesional:** se entiende tu valor como backend, automation & AI developer.
-3. **Impacto visual:** la experiencia se recuerda.
-
-La clave es no convertirlo en una demo visual vacía. Cada animación, sección e interacción debe reforzar el mismo mensaje:
-
-> “Construyo lo que hace que los sistemas funcionen.”
-
-## Stack
-
-This project uses Next.js, TypeScript, Tailwind CSS, shadcn/ui, GSAP ScrollTrigger, Framer Motion, Lenis, Spline or React Three Fiber, and Vercel.
-
-Claude must follow these rules when creating, editing, or refactoring code.
-
-
-## Core Principles
-
-- Use TypeScript for all code.
-- Write clean, readable, production-ready code.
-- Prefer simple, maintainable solutions over clever abstractions.
-- Keep components small, modular, and reusable.
-- Do not add new dependencies unless explicitly requested.
-- Follow the existing project structure and naming conventions.
-- Make sure code is compatible with Vercel.
-- USE DESIGN_SYSTEM.md file to do the layout.
-
-
-## Next.js Rules
-
-- Use the App Router by default.
-- Prefer Server Components unless interactivity is required.
-- Use `"use client"` only for browser-only logic: animations, refs, events, Lenis, GSAP, Framer Motion, Spline, or React Three Fiber.
-- Keep Client Components as small as possible.
-- Never access `window`, `document`, or browser APIs during server render.
-- Use `next/image` for images when possible.
-- Use dynamic imports for heavy client-only components, especially 3D scenes and complex animation sections.
-- Add proper metadata for SEO when working on pages or layouts.
-
-
-## TypeScript Rules
-
-- Define explicit prop types.
-- Avoid `any` unless there is no safe alternative.
-- Handle nullable refs safely.
-- Type DOM refs, animation refs, and Three.js objects correctly.
-- Do not suppress TypeScript errors without a clear reason.
-
-
-## Tailwind and shadcn/ui Rules
-
-- Use Tailwind as the primary styling method.
-- Prefer design-system tokens over arbitrary values.
-- Use arbitrary values only when needed for precise visual work.
-- Keep class names readable.
-- Use `cn()` for conditional classes.
-- Extract repeated class patterns into reusable components.
-- Use shadcn/ui for common UI patterns like buttons, cards, dialogs, forms, tabs, accordions, and dropdowns.
-- Do not rebuild primitives that already exist in shadcn/ui.
-- Customize shadcn components through composition, variants, and Tailwind classes.
-- Preserve accessibility, ARIA attributes, keyboard support, and focus states.
-
-
-## Animation Rules
-
-- Animations must improve UX, not distract from it.
-- Prefer animating `transform` and `opacity`.
-- Avoid animating layout-heavy properties like `width`, `height`, `top`, `left`, `margin`, or `padding`.
-- Keep animations subtle and performant.
-- Respect `prefers-reduced-motion`.
-- Always clean up animations, listeners, timelines, RAF loops, and observers.
-- Avoid using multiple animation libraries on the same element unless necessary.
-
-
-## GSAP ScrollTrigger Rules
-
-- Use GSAP ScrollTrigger for complex scroll-based animations.
-- Register GSAP plugins only in client-side code.
-- Use `gsap.context()` inside React components.
-- Always clean up with `ctx.revert()`.
-- Prefer scoped refs over global selectors.
-- Refresh ScrollTrigger when layout changes affect scroll positions.
-- Do not initialize ScrollTrigger before the DOM is ready.
-
-
-## Framer Motion Rules
-
-- Use Framer Motion for component-level transitions and micro-interactions.
-- Good use cases: entrance animations, hover states, modals, cards, buttons, and page transitions.
-- Use reusable variants when animations repeat.
-- Avoid Framer Motion for complex scroll timelines; use GSAP ScrollTrigger instead.
-- Ensure animations do not cause layout shifts.
-
-
-## Lenis Rules
-
-- Initialize Lenis once at the app/provider level.
-- Keep Lenis setup in a dedicated Client Component.
-- Do not initialize Lenis inside individual page sections.
-- Make sure Lenis works correctly with GSAP ScrollTrigger when both are used.
-- Clean up Lenis on unmount.
-- Disable or simplify smooth scrolling when it hurts accessibility or mobile performance.
-
-
-## 3D Rules
-
-- Use Spline or React Three Fiber only when 3D adds clear value.
-- Lazy-load 3D components using dynamic imports with `ssr: false`.
-- Provide fallback UI while 3D content loads.
-- Keep 3D scenes isolated from page layout logic.
-- Optimize models, textures, lights, shadows, and post-processing.
-- Avoid blocking the main page render with heavy 3D assets.
-- Simplify or disable 3D on mobile when needed.
-- Use React Three Fiber only inside Client Components.
-- Keep Canvas logic inside dedicated scene components.
-- Avoid unnecessary re-renders inside the Canvas.
-- Dispose resources when needed.
-- Load Spline scenes lazily and avoid oversized Spline files.
-
-
-## Performance Rules
-
-- Prioritize Core Web Vitals.
-- Minimize client-side JavaScript.
-- Avoid unnecessary `"use client"` boundaries.
-- Use dynamic imports for heavy animation and 3D modules.
-- Prevent layout shifts.
-- Optimize images, fonts, videos, and 3D assets.
-- Avoid memory leaks from animations, listeners, RAF loops, and Three.js resources.
-- Test assumptions for mobile performance.
-
-
-## Accessibility Rules
-
-- Use semantic HTML.
-- Buttons must be buttons; links must be links.
-- Preserve keyboard navigation and focus states.
-- Respect `prefers-reduced-motion`.
-- Ensure readable text contrast.
-- Add meaningful alt text for images.
-- Do not rely only on color or animation to communicate meaning.
-
-
-## Suggested File Organization
-
-```txt
-app/
-  layout.tsx
-  page.tsx
-components/
-  ui/
-  layout/
-  sections/
-  animation/
-  3d/
-  providers/
-lib/
-  utils.ts
-  animations.ts
-hooks/
-  use-prefers-reduced-motion.ts
-```
-
-- Put page sections in `components/sections`.
-- Put reusable animation components in `components/animation`.
-- Put 3D scenes in `components/3d`.
-- Put global providers in `components/providers`.
-- Put shared animation helpers in `lib/animations.ts`.
-
-
-## Code Output Rules
-
-- Return complete files whenever possible.
-- Include file paths above code blocks.
-- Do not omit required imports.
-- Do not use placeholder code unless explicitly requested.
-- Make sure generated code compiles.
-- Briefly explain important decisions.
-- Mention when a component must be a Client Component.
-
-
-## Decision Framework
-
-- Static content: Server Component.
-- Interactive UI: Client Component.
-- Simple hover or tap animation: Framer Motion.
-- Complex scroll animation: GSAP ScrollTrigger.
-- Smooth scrolling: Lenis provider.
-- Simple visual effect: CSS or Tailwind first.
-- Heavy 3D scene: dynamic import with `ssr: false`.
-- Common UI pattern: shadcn/ui.
-- Repeated styling logic: reusable component or variant.
-
-
-## Do Not Do
-
-- Do not use JavaScript instead of TypeScript.
-- Do not add `"use client"` to every component.
-- Do not initialize GSAP, Lenis, Spline, or R3F in Server Components.
-- Do not access browser APIs during server render.
-- Do not create animations without cleanup.
-- Do not animate expensive layout properties.
-- Do not ship heavy 3D without lazy loading.
-- Do not break accessibility for visual effects.
-- Do not ignore mobile performance.
+To be completed after implementation.
