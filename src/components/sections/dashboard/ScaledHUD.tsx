@@ -11,7 +11,6 @@ import { useEffect, useRef, useState, ReactNode } from "react";
 const DESIGN_W = 1920;
 const DESIGN_H = 1080; // 1920 × (9/16)
 const SCALE_FACTOR = 1.0;
-const MIN_SCALE = 0.55;
 
 export function ScaledHUD({ children }: { children: ReactNode }) {
   const outerRef = useRef<HTMLDivElement>(null);
@@ -22,10 +21,10 @@ export function ScaledHUD({ children }: { children: ReactNode }) {
     if (!el) return;
 
     const measure = () =>
-      setScale(Math.max(MIN_SCALE, (el.offsetWidth / DESIGN_W) * SCALE_FACTOR));
+      setScale((el.offsetWidth / DESIGN_W) * SCALE_FACTOR);
 
     const ro = new ResizeObserver(([entry]) => {
-      setScale(Math.max(MIN_SCALE, (entry.contentRect.width / DESIGN_W) * SCALE_FACTOR));
+      setScale((entry.contentRect.width / DESIGN_W) * SCALE_FACTOR);
     });
     ro.observe(el);
     measure();
