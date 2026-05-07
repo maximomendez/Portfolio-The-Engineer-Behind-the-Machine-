@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { SteeringIdentity } from "./dashboard/SteeringIdentity";
 import { WindshieldTitle } from "./dashboard/WindshieldTitle";
@@ -11,6 +12,28 @@ import { SkillLights } from "./dashboard/SkillLights";
 import { MachineSummary } from "./dashboard/MachineSummary";
 import { EngineStackPanel } from "./dashboard/EngineStackPanel";
 import { ScaledHUD } from "./dashboard/ScaledHUD";
+
+function calcStage(vw: number, vh: number) {
+  return {
+    w: Math.min(vw, (vh * 16) / 9),
+    h: Math.min(vh, (vw * 9) / 16),
+  };
+}
+
+function useStageDims() {
+  const [dims, setDims] = useState<{ w: number; h: number } | null>(null);
+
+  useEffect(() => {
+    const update = () =>
+      setDims(calcStage(window.innerWidth, window.innerHeight));
+
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  return dims;
+}
 
 function RotateDeviceOverlay() {
   const { t } = useLanguage();
@@ -47,31 +70,32 @@ function RotateDeviceOverlay() {
 }
 
 export function Dashboard() {
+  const stage = useStageDims();
+
   return (
     /*
      * Outer section fills the full viewport and provides the letterbox
      * background (black bars on non-16:9 screens).
+     * We drive height via JS (window.innerHeight) so rotation on iOS Safari
+     * settles immediately without the dvh stale-value bug.
      */
     <section
       id="dashboard"
-      className="relative h-dvh w-full overflow-hidden bg-[#05080c] flex items-center justify-center"
+      className="relative w-full overflow-hidden bg-[#05080c] flex items-center justify-center"
+      style={{ height: stage ? stage.h : "100dvh" }}
     >
       {/* Portrait-mode prompt — only visible on small screens in portrait orientation */}
       <RotateDeviceOverlay />
       {/*
        * 16:9 stage — the image AND every HUD element live inside here.
-       * At any viewport size this box is the largest 16:9 rectangle that
-       * fits inside the viewport, so all absolute-% positions stay locked
-       * to the cockpit image at every screen size.
-       *
-       *   width  = min(100vw,  100dvh × 16/9)
-       *   height = min(100dvh, 100vw  × 9/16)
+       * Dimensions are JS-calculated from window.innerWidth/Height so they
+       * always reflect the settled post-rotation viewport.
        */}
       <div
         className="relative overflow-hidden"
         style={{
-          width:  "min(100vw, calc(100dvh * 16 / 9))",
-          height: "min(100dvh, calc(100vw * 9 / 16))",
+          width:  stage ? stage.w : "min(100vw, calc(100dvh * 16 / 9))",
+          height: stage ? stage.h : "min(100dvh, calc(100vw * 9 / 16))",
         }}
       >
         {/* ── BASE IMAGE ──────────────────────────────────────────────── */}

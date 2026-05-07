@@ -20,13 +20,25 @@ export function ScaledHUD({ children }: { children: ReactNode }) {
   useEffect(() => {
     const el = outerRef.current;
     if (!el) return;
+
+    const measure = () =>
+      setScale(Math.max(MIN_SCALE, (el.offsetWidth / DESIGN_W) * SCALE_FACTOR));
+
     const ro = new ResizeObserver(([entry]) => {
       setScale(Math.max(MIN_SCALE, (entry.contentRect.width / DESIGN_W) * SCALE_FACTOR));
     });
     ro.observe(el);
-    // Initial measurement
-    setScale(Math.max(MIN_SCALE, (el.offsetWidth / DESIGN_W) * SCALE_FACTOR));
-    return () => ro.disconnect();
+    measure();
+
+    // iOS Safari can report stale dimensions immediately after rotation.
+    // Re-measure once the browser has settled (~150 ms is enough).
+    const onOrientationChange = () => setTimeout(measure, 150);
+    window.addEventListener("orientationchange", onOrientationChange);
+
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("orientationchange", onOrientationChange);
+    };
   }, []);
 
   return (
