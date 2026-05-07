@@ -167,14 +167,14 @@ export const en = {
   projects: {
     eyebrow: "03 / Track Record",
     title: "Projects",
-    subtitle1: "Case studies are being prepared for deployment.",
+    subtitle1: "Real systems built for production — case studies coming soon.",
     subtitle2: "Each file documents a real system — backend, automation, or AI.",
-    queued: "QUEUED",
-    statusBar: "3 systems queued — deployment pending",
+    queued: "COMING SOON",
+    statusBar: "Details releasing soon",
     types: {
-      "PRJ-001": "Backend Workflow System",
-      "PRJ-002": "Intelligent Data Pipeline",
-      "PRJ-003": "Multi-Service Integration Layer",
+      "PRJ-001": "Case Study — Details Releasing Soon",
+      "PRJ-002": "Case Study — Details Releasing Soon",
+      "PRJ-003": "Case Study — Details Releasing Soon",
     },
   },
   contact: {
@@ -432,14 +432,14 @@ export const es: typeof en = {
   projects: {
     eyebrow: "03 / Historial",
     title: "Proyectos",
-    subtitle1: "Los casos de estudio están siendo preparados para lanzamiento.",
+    subtitle1: "Sistemas reales construidos para producción — casos de estudio próximamente.",
     subtitle2: "Cada archivo documenta un sistema real — backend, automatización o IA.",
-    queued: "EN COLA",
-    statusBar: "3 sistemas en cola — despliegue pendiente",
+    queued: "PRÓXIMAMENTE",
+    statusBar: "Detalles disponibles pronto",
     types: {
-      "PRJ-001": "Sistema de Flujo Backend",
-      "PRJ-002": "Pipeline de Datos Inteligente",
-      "PRJ-003": "Capa de Integración Multi-Servicio",
+      "PRJ-001": "Caso de Estudio — Detalles Próximamente",
+      "PRJ-002": "Caso de Estudio — Detalles Próximamente",
+      "PRJ-003": "Caso de Estudio — Detalles Próximamente",
     },
   },
   contact: {

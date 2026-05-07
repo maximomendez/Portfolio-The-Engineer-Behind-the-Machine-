@@ -7,23 +7,23 @@ import { useLanguage } from "@/context/LanguageContext";
 const QUEUED_PROJECTS = [
   {
     id: "PRJ-001",
-    category: "AUTOMATION",
-    type: "Backend Workflow System",
-    tags: ["Node.js", "n8n", "PostgreSQL", "REST API"],
+    category: "CASE STUDY",
+    type: "Case Study — Details Releasing Soon",
+    tags: [],
     lines: [4, 7, 5, 6, 4],
   },
   {
     id: "PRJ-002",
-    category: "AI INTEGRATION",
-    type: "Intelligent Data Pipeline",
-    tags: ["Python", "OpenAI", "Vector DB", "FastAPI"],
+    category: "CASE STUDY",
+    type: "Case Study — Details Releasing Soon",
+    tags: [],
     lines: [6, 4, 7, 5, 3],
   },
   {
     id: "PRJ-003",
-    category: "API PLATFORM",
-    type: "Multi-Service Integration Layer",
-    tags: ["TypeScript", "Docker", "Redis", "Webhooks"],
+    category: "CASE STUDY",
+    type: "Case Study — Details Releasing Soon",
+    tags: [],
     lines: [5, 6, 4, 7, 5],
   },
 ];
