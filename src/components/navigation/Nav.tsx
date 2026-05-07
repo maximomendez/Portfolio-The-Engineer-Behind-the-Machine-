@@ -46,7 +46,7 @@ export function Nav() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isDashboard
-          ? "md:-translate-y-full md:opacity-0 md:pointer-events-none"
+          ? "-translate-y-full opacity-0 pointer-events-none"
           : scrolled
           ? "border-b border-[#2a2a2a] bg-[#0b0b0b]/90 backdrop-blur-md"
           : "bg-transparent"
