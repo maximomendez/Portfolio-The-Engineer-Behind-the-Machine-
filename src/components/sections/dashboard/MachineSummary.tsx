@@ -9,7 +9,6 @@ interface Metric {
   suffix?: string;
   display?: string;
   label: string;
-  comingSoon?: boolean;
 }
 
 
@@ -51,8 +50,8 @@ export function MachineSummary() {
 
   const METRICS: Metric[] = [
     { numericValue: 3, suffix: "+", label: t.dashboard.machineSummary.experience },
-    { numericValue: 1, suffix: "+", label: t.dashboard.machineSummary.projects, comingSoon: true },
-    { numericValue: 99.9, suffix: "%", label: t.dashboard.machineSummary.uptime },
+    { numericValue: 2, suffix: "", label: t.dashboard.machineSummary.projects },
+    { numericValue: 3, suffix: "", label: t.dashboard.machineSummary.companies },
     { display: "∞", label: t.dashboard.machineSummary.learning },
   ];
 
@@ -135,25 +134,6 @@ export function MachineSummary() {
               >
                 {m.label}
               </span>
-              {m.comingSoon && (
-                <span
-                  style={{
-                    fontFamily: "monospace",
-                    fontSize: "16px",
-                    fontWeight: 700,
-                    letterSpacing: "0.12em",
-                    textTransform: "uppercase",
-                    color: "#ff2d2d",
-                    background: "rgba(255,45,45,0.08)",
-                    border: "1px solid rgba(255,45,45,0.25)",
-                    borderRadius: "4px",
-                    padding: "1px 5px",
-                    lineHeight: 1.6,
-                  }}
-                >
-                  soon
-                </span>
-              )}
             </div>
           ))}
         </div>

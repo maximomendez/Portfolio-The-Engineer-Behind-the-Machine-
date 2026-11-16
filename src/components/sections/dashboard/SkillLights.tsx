@@ -7,8 +7,8 @@ const SKILLS = [
   { label: "Backend",          color: "#3dff8f" },
   { label: "APIs",             color: "#3dff8f" },
   { label: "Automation",       color: "#3dff8f" },
-  { label: "AI / ML",          color: "#38BDF8" },
-  { label: "Data Engineering", color: "#38BDF8" },
+  { label: "AI Agents",          color: "#38BDF8" },
+  { label: "Databases",        color: "#38BDF8" },
   { label: "DevOps",           color: "#3dff8f" },
 ] as const;
 

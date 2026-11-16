@@ -5,8 +5,8 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const STACK = [
   {
-    category: "Architecture",
-    tech: "MICROSERVICES",
+    category: "Frameworks",
+    tech: "NESTJS / EXPRESS / SPRING",
     icon: (
       <svg width="17" height="17" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="7" cy="2.5" r="1.5" />
@@ -20,7 +20,7 @@ const STACK = [
   },
   {
     category: "Backend",
-    tech: "NODE.JS / JAVA",
+    tech: "NODE.JS / TS / JAVA",
     icon: (
       <svg width="17" height="17" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
         <rect x="1.5" y="1.5" width="11" height="3.5" rx="1" />
@@ -33,7 +33,7 @@ const STACK = [
   },
   {
     category: "Database",
-    tech: "POSTGRES / MONGO / SQL / REDIS",
+    tech: "POSTGRES / MYSQL / MONGO",
     icon: (
       <svg width="17" height="17" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
         <ellipse cx="7" cy="3.5" rx="4.5" ry="1.8" />
@@ -44,7 +44,7 @@ const STACK = [
   },
   {
     category: "DevOps",
-    tech: "DOCKER / K8S",
+    tech: "DOCKER / CI/CD",
     icon: (
       <svg width="17" height="17" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
         <rect x="1.5" y="4.5" width="11" height="7" rx="1.5" />
@@ -56,7 +56,7 @@ const STACK = [
   },
   {
     category: "Cloud",
-    tech: "AWS / GCP",
+    tech: "AWS / DIGITALOCEAN",
     icon: (
       <svg width="17" height="17" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
         <path d="M10.5 10.5H4a2.5 2.5 0 0 1 0-5h.3A4 4 0 1 1 11 9.5" />

@@ -1,32 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Lock } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
-
-const QUEUED_PROJECTS = [
-  {
-    id: "PRJ-001",
-    category: "CASE STUDY",
-    type: "Case Study — Details Releasing Soon",
-    tags: [],
-    lines: [4, 7, 5, 6, 4],
-  },
-  {
-    id: "PRJ-002",
-    category: "CASE STUDY",
-    type: "Case Study — Details Releasing Soon",
-    tags: [],
-    lines: [6, 4, 7, 5, 3],
-  },
-  {
-    id: "PRJ-003",
-    category: "CASE STUDY",
-    type: "Case Study — Details Releasing Soon",
-    tags: [],
-    lines: [5, 6, 4, 7, 5],
-  },
-];
+import { projects, type Project } from "@/data/projects";
+import type { Lang, Translations } from "@/lib/translations";
 
 const containerVariants = {
   hidden: {},
@@ -38,92 +15,79 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
 };
 
-function RedactedLine({ width }: { width: number }) {
+function Field({ label, children }: { label: string; children: string }) {
   return (
-    <div
-      className="h-[6px] rounded-sm bg-[#1a1a1a]"
-      style={{ width: `${width * 12}%` }}
-    />
+    <div className="flex flex-col gap-1.5">
+      <h4 className="font-mono text-xs uppercase tracking-wider text-[#6b6b6b]">{label}</h4>
+      <p className="text-sm md:text-base leading-relaxed text-[#b5b5b5]">{children}</p>
+    </div>
   );
 }
 
-function QueuedCard({
-  id,
-  category,
-  type,
-  tags,
-  lines,
-  index,
-  queuedLabel,
-}: (typeof QUEUED_PROJECTS)[0] & { index: number; queuedLabel: string }) {
+function CaseStudyCard({
+  project,
+  lang,
+  labels,
+}: {
+  project: Project;
+  lang: Lang;
+  labels: Translations["projects"];
+}) {
   return (
-    <motion.div
+    <motion.article
       variants={cardVariants}
-      className="group relative flex flex-col gap-5 rounded-sm border border-[#1e1e1e] bg-[#0d0d0d] p-6 overflow-hidden"
+      className="relative flex flex-col gap-6 overflow-hidden rounded-sm border border-[#1e1e1e] bg-[#0d0d0d] p-6"
     >
-      {/* Corner lock */}
-      <div className="absolute top-4 right-4 text-[#2a2a2a] group-hover:text-[#ff2d2d] transition-colors duration-300">
-        <Lock size={13} strokeWidth={1.5} />
-      </div>
-
-      {/* Scan line on hover */}
-      <motion.div
-        className="pointer-events-none absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-[#ff2d2d]/20 to-transparent opacity-0 group-hover:opacity-100"
-        animate={{ top: ["0%", "100%"] }}
-        transition={{ duration: 2.4, repeat: Infinity, ease: "linear" }}
+      <div
+        aria-hidden
+        className="absolute inset-x-0 top-0 h-px"
+        style={{ background: `linear-gradient(90deg, transparent, ${project.accent}, transparent)` }}
       />
 
-      {/* Header */}
-      <div className="flex items-start justify-between gap-4">
-        <div className="flex flex-col gap-1.5">
-          <div className="flex items-center gap-2">
-            {/* Pulsing status dot */}
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff2d2d] opacity-50" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#ff2d2d]" />
-            </span>
-            <span className="font-mono text-[9px] tracking-widest text-[#ff2d2d]">
-              {category}
-            </span>
-          </div>
-          <p className="text-sm font-medium text-[#3a3a3a]">{type}</p>
-        </div>
-
-        {/* Classified badge */}
-        <span className="shrink-0 rounded-sm border border-[#2a2a2a] px-2 py-0.5 font-mono text-[9px] tracking-widest text-[#2a2a2a] uppercase">
-          {queuedLabel}
-        </span>
-      </div>
-
-      {/* Redacted body */}
-      <div className="flex flex-col gap-2 py-1">
-        {lines.map((w, i) => (
-          <RedactedLine key={i} width={w} />
-        ))}
-      </div>
-
-      {/* Tags */}
-      <div className="flex flex-wrap gap-1.5 mt-auto">
-        {tags.map((tag) => (
-          <span
-            key={tag}
-            className="rounded-sm bg-[#141414] px-2 py-0.5 font-mono text-[9px] tracking-wider text-[#3a3a3a] uppercase"
-          >
-            {tag}
+      <header className="flex flex-col gap-2">
+        <div className="flex items-center justify-between gap-4">
+          <span className="font-mono text-xs uppercase tracking-widest" style={{ color: project.accent }}>
+            {project.circuit[lang]}
           </span>
-        ))}
-      </div>
+          <span className="font-mono text-xs tracking-widest text-[#4a4a4a]">{project.code}</span>
+        </div>
+        <h3 className="text-lg md:text-xl font-semibold text-[#ededed]">{project.name}</h3>
+        <p className="text-sm text-[#6b6b6b]">
+          {project.role[lang]} · {project.period[lang]}
+        </p>
+      </header>
 
-      {/* File ID */}
-      <div className="absolute bottom-4 right-5 font-mono text-[8px] tracking-widest text-[#1e1e1e]">
-        {id}
-      </div>
-    </motion.div>
+      <Field label={labels.problem}>{project.problem[lang]}</Field>
+      <Field label={labels.solution}>{project.solution[lang]}</Field>
+      <Field label={labels.relevance}>{project.relevance[lang]}</Field>
+
+      <dl className="grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-[#1e1e1e] pt-5">
+        {project.metrics.map((metric) => (
+          <div key={metric.label.en} className="flex flex-col gap-1">
+            <dt className="order-2 text-xs text-[#6b6b6b]">{metric.label[lang]}</dt>
+            <dd className="order-1 font-mono text-2xl font-semibold" style={{ color: project.accent }}>
+              {metric.value}
+            </dd>
+          </div>
+        ))}
+      </dl>
+
+      <ul className="mt-auto flex flex-wrap gap-1.5" aria-label={labels.stack}>
+        {project.stack.map((tech) => (
+          <li
+            key={tech}
+            className="rounded-sm bg-[#141414] px-2 py-0.5 font-mono text-xs uppercase tracking-wider text-[#9a9a9a]"
+          >
+            {tech}
+          </li>
+        ))}
+      </ul>
+    </motion.article>
   );
 }
 
 export function Projects() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   return (
     <section
@@ -163,38 +127,17 @@ export function Projects() {
           </p>
         </motion.div>
 
-        {/* Cards grid */}
+        {/* Case studies */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4"
         >
-          {QUEUED_PROJECTS.map((project, i) => (
-            <QueuedCard
-              key={project.id}
-              {...project}
-              type={t.projects.types[project.id as keyof typeof t.projects.types] ?? project.type}
-              index={i}
-              queuedLabel={t.projects.queued}
-            />
+          {projects.map((project) => (
+            <CaseStudyCard key={project.id} project={project} lang={lang} labels={t.projects} />
           ))}
-        </motion.div>
-
-        {/* Status bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="mt-12 flex items-center gap-3"
-        >
-          <div className="h-px flex-1 bg-[#1a1a1a]" />
-          <span className="font-mono text-[9px] tracking-widest text-[#4a4a4a] uppercase">
-            {t.projects.statusBar}
-          </span>
-          <div className="h-px flex-1 bg-[#1a1a1a]" />
         </motion.div>
       </div>
     </section>

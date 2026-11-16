@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { useLanguage } from "@/context/LanguageContext";
 import type { Lang } from "@/lib/translations";
 
-const SECTION_IDS = ["ignition", "dashboard", "engine", "ai-system", "track", "pit-stop"];
+const SECTION_IDS = ["ignition", "dashboard", "engine", "ai-system", "track", "experience", "pit-stop"];
 
 export function Nav() {
   const { lang, setLang, t } = useLanguage();

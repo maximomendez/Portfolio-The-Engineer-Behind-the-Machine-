@@ -19,7 +19,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://maximomendez.dev"),
+  metadataBase: new URL("https://portfolio-the-engineer-behind-the-m.vercel.app"),
   title: "Maximo Mendez — The Engineer Behind the Machine",
   description:
     "Full Stack Developer specialized in Backend, Automation & AI. I build the systems, workflows and intelligence that make digital products perform.",
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/backend-engine.png",
-        width: 700,
-        height: 440,
+        width: 2048,
+        height: 1365,
         alt: "Maximo Mendez — Backend Engineering Portfolio",
       },
     ],

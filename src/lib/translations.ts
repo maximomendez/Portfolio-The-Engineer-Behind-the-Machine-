@@ -7,6 +7,7 @@ export const en = {
       { label: "Engine", href: "#engine" },
       { label: "AI System", href: "#ai-system" },
       { label: "Projects", href: "#track" },
+      { label: "Experience", href: "#experience" },
       { label: "Contact", href: "#pit-stop" },
     ],
   },
@@ -42,14 +43,14 @@ export const en = {
     engineBuilds: "Engine Builds",
     caseStudies: "Case studies",
     engineBuildsSub:
-      "Real systems mapped as engine builds: intelligence, performance and modernization circuits.",
+      "Real systems mapped as engine builds: automation, AI and performance circuits.",
     engineModule: "Engine Module",
     modules: {
       combustion: {
         label: "Cylinders / Combustion",
         part: "Business Logic",
         description:
-          "Services, validations and domain rules that turn raw requests into product behavior.",
+          "Services, validations and domain rules, tested with Jest, that turn raw requests into product behavior.",
         powers: ["Core business rules", "Domain validations", "Predictable behavior"],
         telemetry: "Ruleset integrity",
         output: "Predictable product behavior",
@@ -58,23 +59,23 @@ export const en = {
         label: "Engine Block / Core",
         part: "Runtime Core",
         description:
-          "Node.js, Java and TypeScript runtime decisions built for throughput and reliability.",
-        powers: ["Request throughput", "Memory efficiency", "Worker concurrency"],
+          "Node.js, NestJS, Spring Boot and TypeScript runtime decisions built for throughput and reliability.",
+        powers: ["Request throughput", "Memory efficiency", "Stable execution"],
         telemetry: "Execution stability",
         output: "Reliable service runtime",
       },
       fuel: {
         label: "Fuel System",
         part: "Data Layer",
-        description: "PostgreSQL, Redis, caching, indexing and queue-backed data flow.",
-        powers: ["Fast data access", "Cache hit rates", "Queue reliability"],
+        description: "PostgreSQL, MySQL and MongoDB for relational modeling and reliable persistence.",
+        powers: ["Fast data access", "Relational modeling", "Reliable persistence"],
         telemetry: "Data flow pressure",
         output: "Fast access to trusted data",
       },
       intake: {
         label: "Intake / Entry",
         part: "API Layer",
-        description: "REST, GraphQL, auth, webhooks and consistent external contracts.",
+        description: "REST, GraphQL, JWT/OAuth2, Swagger and consistent external contracts.",
         powers: ["Clean contracts", "Auth enforcement", "External integrations"],
         telemetry: "Contract surface",
         output: "Clean inputs and integrations",
@@ -82,8 +83,8 @@ export const en = {
       turbo: {
         label: "Turbo / Boost",
         part: "Automation",
-        description: "n8n workflows, cron jobs, queues, CI/CD and process acceleration.",
-        powers: ["Zero manual steps", "Scheduled pipelines", "Event-driven flows"],
+        description: "n8n workflows generated through its API, Git-based CI/CD and process acceleration.",
+        powers: ["Fewer manual steps", "Automated pipelines", "Faster deployments"],
         telemetry: "Manual work reduction",
         output: "Processes that run without drag",
       },
@@ -91,7 +92,7 @@ export const en = {
         label: "ECU / Brain",
         part: "AI Integration",
         description:
-          "LLM workflows, agents and Claude/OpenAI integrations connected to production data.",
+          "AI agents with OpenAI API and Claude, an MCP and Claude Code connected to real workflows.",
         powers: ["LLM decisions", "Contextual responses", "Smart data routing"],
         telemetry: "Intelligence layer",
         output: "AI decisions wired to real workflows",
@@ -108,7 +109,7 @@ export const en = {
     title2: "System",
     titleHighlight: "Pipeline",
     subtitle:
-      "How I wire LLMs, retrieval and automation into production systems — select a stage to inspect it.",
+      "How I wire LLMs and automation into production systems — select a stage to inspect it.",
     whatItDoes: "What it does",
     stack: "Stack",
     realUseCase: "Real use case",
@@ -121,28 +122,28 @@ export const en = {
         label: "Input",
         sublabel: "Data Source",
         description:
-          "Raw signals enter the system. User prompts, API payloads, documents and database queries are ingested, validated and normalized before any AI processing begins.",
+          "Raw signals enter the system. User input, API payloads and database queries are ingested, validated and normalized before any AI processing begins.",
         useCase:
-          "Pathmonk: customer journey events streamed from tracking APIs and normalized into a processing queue.",
+          "Pathmonk: the agent configuration and CRM data are received through the REST API, validated and normalized.",
         output: "Validated, normalized data ready for enrichment",
       },
       context: {
         label: "Context",
-        sublabel: "RAG / Retrieval",
+        sublabel: "Agent Context",
         description:
-          "Relevant knowledge is retrieved and injected. Documents are embedded, previous interactions recalled and domain data surfaced — before the model processes a single token.",
+          "The context the agent needs is assembled: CRM data, agent configuration and the workflow definition to generate.",
         useCase:
-          "Document Q&A: user question retrieves top-k relevant chunks from an embedded knowledge base, grounding the model in verified data.",
-        output: "Enriched prompt with grounding context",
+          "Pathmonk: when an agent is created, its configuration is turned into the definition of an n8n workflow.",
+        output: "Agent context ready for the model and the workflow",
       },
       model: {
         label: "Model",
         sublabel: "LLM Processing",
         description:
-          "The intelligence core. Claude, GPT-4 or specialized models process the enriched context, apply reasoning chains and generate structured or conversational output.",
+          "The intelligence core. The OpenAI API and Claude process the context and generate structured or conversational output.",
         useCase:
-          "Pathmonk: Claude analyzes session data and generates prioritized optimization recommendations mapped to conversion goals.",
-        output: "Raw model response with full reasoning",
+          "Pathmonk: the agents orchestrated by the platform use the OpenAI API for their intelligence.",
+        output: "Raw model response",
       },
       parser: {
         label: "Parser",
@@ -150,16 +151,16 @@ export const en = {
         description:
           "Raw model output is transformed into reliable, typed data. JSON extraction, schema validation, error recovery and retry logic make AI output production-safe.",
         useCase:
-          "Lead scoring: model output parsed into { score, reason, priority } — typed, validated and safe to persist or route downstream.",
+          "Model output parsed into a typed structure — validated and safe to persist or route downstream.",
         output: "Type-safe, validated data ready for action",
       },
       action: {
         label: "Action",
         sublabel: "Integration",
         description:
-          "Intelligence connects to the system. Database writes, API calls, automation triggers and notifications translate AI decisions into real business operations.",
+          "Intelligence connects to the system. Database writes, API calls and n8n workflows translate AI decisions into real business operations.",
         useCase:
-          "Automated workflow: AI decision triggers an n8n flow to update the CRM, send a prioritized alert and schedule the next follow-up action.",
+          "Pathmonk: the backend creates the n8n workflow through its API and the agent acts on the CRM.",
         output: "Business action executed in production",
       },
     },
@@ -167,15 +168,21 @@ export const en = {
   projects: {
     eyebrow: "03 / Track Record",
     title: "Projects",
-    subtitle1: "Real systems built for production — case studies coming soon.",
-    subtitle2: "Each file documents a real system — backend, automation, or AI.",
-    queued: "COMING SOON",
-    statusBar: "Details releasing soon",
-    types: {
-      "PRJ-001": "Case Study — Details Releasing Soon",
-      "PRJ-002": "Case Study — Details Releasing Soon",
-      "PRJ-003": "Case Study — Details Releasing Soon",
-    },
+    subtitle1: "Two real systems built for production.",
+    subtitle2: "Each case study covers the problem, what I built and why it matters.",
+    problem: "Problem",
+    solution: "What I built",
+    relevance: "Why it matters",
+    stack: "Stack",
+  },
+  experience: {
+    eyebrow: "04 / Career Log",
+    title: "Experience",
+    subtitle: "Three roles building backends, automation and AI in production.",
+    stack: "Stack",
+    education: "Education",
+    certifications: "Certifications",
+    languages: "Languages",
   },
   contact: {
     rotateDevice: "ROTATE DEVICE",
@@ -204,7 +211,7 @@ export const en = {
     identity: {
       eyebrow: "Developer + Architect",
       title: "System Builder",
-      description: "I build scalable systems solve complex problems and automate the future.",
+      description: "I build scalable systems, solve complex problems and automate the future.",
       cta: "About Me",
     },
     windshield: {
@@ -242,8 +249,8 @@ export const en = {
     machineSummary: {
       header: "Machine Summary",
       experience: "Years Experience",
-      projects: "Projects Delivered",
-      uptime: "Uptime Focus",
+      projects: "Case Studies",
+      companies: "Companies",
       learning: "Always Learning",
       footer1: "I Don't Just Code.",
       footer2: "I Engineer Solutions.",
@@ -272,6 +279,7 @@ export const es: typeof en = {
       { label: "Motor", href: "#engine" },
       { label: "Sistema IA", href: "#ai-system" },
       { label: "Proyectos", href: "#track" },
+      { label: "Experiencia", href: "#experience" },
       { label: "Contacto", href: "#pit-stop" },
     ],
   },
@@ -307,14 +315,14 @@ export const es: typeof en = {
     engineBuilds: "Proyectos del Motor",
     caseStudies: "Casos de estudio",
     engineBuildsSub:
-      "Sistemas reales mapeados como proyectos del motor: circuitos de inteligencia, rendimiento y modernización.",
+      "Sistemas reales mapeados como proyectos del motor: circuitos de automatización, IA y rendimiento.",
     engineModule: "Módulo del Motor",
     modules: {
       combustion: {
         label: "Cilindros / Combustión",
         part: "Lógica de Negocio",
         description:
-          "Servicios, validaciones y reglas de dominio que transforman peticiones en comportamiento de producto.",
+          "Servicios, validaciones y reglas de dominio, probados con Jest, que transforman peticiones en comportamiento de producto.",
         powers: ["Reglas de negocio", "Validaciones de dominio", "Comportamiento predecible"],
         telemetry: "Integridad del conjunto de reglas",
         output: "Comportamiento de producto predecible",
@@ -323,23 +331,23 @@ export const es: typeof en = {
         label: "Bloque Motor / Núcleo",
         part: "Núcleo de Ejecución",
         description:
-          "Decisiones de runtime con Node.js, Java y TypeScript diseñadas para rendimiento y confiabilidad.",
-        powers: ["Throughput de peticiones", "Eficiencia de memoria", "Concurrencia de workers"],
+          "Decisiones de runtime con Node.js, NestJS, Spring Boot y TypeScript diseñadas para rendimiento y confiabilidad.",
+        powers: ["Throughput de peticiones", "Eficiencia de memoria", "Ejecución estable"],
         telemetry: "Estabilidad de ejecución",
         output: "Runtime de servicio confiable",
       },
       fuel: {
         label: "Sistema de Combustible",
         part: "Capa de Datos",
-        description: "PostgreSQL, Redis, caché, índices y flujo de datos respaldado por colas.",
-        powers: ["Acceso rápido a datos", "Tasas de caché", "Confiabilidad de colas"],
+        description: "PostgreSQL, MySQL y MongoDB para modelado relacional y persistencia confiable.",
+        powers: ["Acceso rápido a datos", "Modelado relacional", "Persistencia confiable"],
         telemetry: "Presión del flujo de datos",
         output: "Acceso rápido a datos confiables",
       },
       intake: {
         label: "Admisión / Entrada",
         part: "Capa API",
-        description: "REST, GraphQL, autenticación, webhooks y contratos externos consistentes.",
+        description: "REST, GraphQL, JWT/OAuth2, Swagger y contratos externos consistentes.",
         powers: ["Contratos limpios", "Enforcement de auth", "Integraciones externas"],
         telemetry: "Superficie de contratos",
         output: "Entradas e integraciones limpias",
@@ -347,8 +355,8 @@ export const es: typeof en = {
       turbo: {
         label: "Turbo / Impulso",
         part: "Automatización",
-        description: "Flujos n8n, cron jobs, colas, CI/CD y aceleración de procesos.",
-        powers: ["Cero pasos manuales", "Pipelines programados", "Flujos por eventos"],
+        description: "Flujos n8n generados por su API, CI/CD con Git y aceleración de procesos.",
+        powers: ["Menos pasos manuales", "Pipelines automatizados", "Despliegues más rápidos"],
         telemetry: "Reducción de trabajo manual",
         output: "Procesos que corren sin fricción",
       },
@@ -356,7 +364,7 @@ export const es: typeof en = {
         label: "ECU / Cerebro",
         part: "Integración IA",
         description:
-          "Flujos LLM, agentes e integraciones de Claude/OpenAI conectadas a datos de producción.",
+          "Agentes de IA con la API de OpenAI y Claude, un MCP y Claude Code conectados a flujos reales.",
         powers: ["Decisiones LLM", "Respuestas contextuales", "Ruteo inteligente de datos"],
         telemetry: "Capa de inteligencia",
         output: "Decisiones IA conectadas a flujos reales",
@@ -373,7 +381,7 @@ export const es: typeof en = {
     title2: "Sistema",
     titleHighlight: "Pipeline",
     subtitle:
-      "Cómo conecto LLMs, recuperación y automatización en sistemas de producción — selecciona una etapa para inspeccionarla.",
+      "Cómo conecto LLMs y automatización en sistemas de producción — selecciona una etapa para inspeccionarla.",
     whatItDoes: "Qué hace",
     stack: "Stack",
     realUseCase: "Caso de uso real",
@@ -386,28 +394,28 @@ export const es: typeof en = {
         label: "Entrada",
         sublabel: "Fuente de Datos",
         description:
-          "Las señales brutas ingresan al sistema. Prompts de usuario, payloads de API, documentos y consultas de base de datos son ingestados, validados y normalizados antes de cualquier procesamiento IA.",
+          "Las señales brutas ingresan al sistema. Entradas de usuario, payloads de API y consultas de base de datos son ingestados, validados y normalizados antes de cualquier procesamiento IA.",
         useCase:
-          "Pathmonk: eventos del customer journey transmitidos desde APIs de tracking y normalizados en una cola de procesamiento.",
+          "Pathmonk: la configuración del agente y los datos del CRM llegan por la API REST, se validan y se normalizan.",
         output: "Datos validados y normalizados listos para enriquecimiento",
       },
       context: {
         label: "Contexto",
-        sublabel: "RAG / Recuperación",
+        sublabel: "Contexto del Agente",
         description:
-          "El conocimiento relevante es recuperado e inyectado. Documentos embebidos, interacciones previas recordadas y datos de dominio disponibles — antes de que el modelo procese un solo token.",
+          "Se ensambla el contexto que necesita el agente: datos del CRM, configuración del agente y la definición del workflow a generar.",
         useCase:
-          "Q&A de documentos: la pregunta del usuario recupera los top-k fragmentos relevantes de una base de conocimiento embebida, fundamentando el modelo en datos verificados.",
-        output: "Prompt enriquecido con contexto fundamentado",
+          "Pathmonk: al crear un agente, su configuración se convierte en la definición de un workflow de n8n.",
+        output: "Contexto del agente listo para el modelo y el workflow",
       },
       model: {
         label: "Modelo",
         sublabel: "Procesamiento LLM",
         description:
-          "El núcleo de inteligencia. Claude, GPT-4 o modelos especializados procesan el contexto enriquecido, aplican cadenas de razonamiento y generan salida estructurada o conversacional.",
+          "El núcleo de inteligencia. La API de OpenAI y Claude procesan el contexto y generan salida estructurada o conversacional.",
         useCase:
-          "Pathmonk: Claude analiza datos de sesión y genera recomendaciones de optimización priorizadas mapeadas a objetivos de conversión.",
-        output: "Respuesta del modelo con razonamiento completo",
+          "Pathmonk: los agentes que orquesta la plataforma usan la API de OpenAI como capa de inteligencia.",
+        output: "Respuesta bruta del modelo",
       },
       parser: {
         label: "Parser",
@@ -415,16 +423,16 @@ export const es: typeof en = {
         description:
           "La salida bruta del modelo se transforma en datos tipados y confiables. Extracción JSON, validación de esquemas, recuperación de errores y lógica de reintentos hacen la salida IA segura para producción.",
         useCase:
-          "Lead scoring: salida del modelo parseada en { score, reason, priority } — tipada, validada y segura para persistir o enrutar downstream.",
+          "Salida del modelo parseada en una estructura tipada — validada y segura para persistir o enrutar después.",
         output: "Datos tipados y validados listos para acción",
       },
       action: {
         label: "Acción",
         sublabel: "Integración",
         description:
-          "La inteligencia se conecta al sistema. Escrituras a base de datos, llamadas API, activadores de automatización y notificaciones traducen decisiones IA en operaciones de negocio reales.",
+          "La inteligencia se conecta al sistema. Escrituras a base de datos, llamadas API y flujos n8n traducen decisiones IA en operaciones de negocio reales.",
         useCase:
-          "Flujo automatizado: la decisión IA activa un flujo n8n para actualizar el CRM, enviar una alerta priorizada y programar el siguiente seguimiento.",
+          "Pathmonk: el backend crea el workflow en n8n mediante su API y el agente actúa sobre el CRM.",
         output: "Acción de negocio ejecutada en producción",
       },
     },
@@ -432,15 +440,21 @@ export const es: typeof en = {
   projects: {
     eyebrow: "03 / Historial",
     title: "Proyectos",
-    subtitle1: "Sistemas reales construidos para producción — casos de estudio próximamente.",
-    subtitle2: "Cada archivo documenta un sistema real — backend, automatización o IA.",
-    queued: "PRÓXIMAMENTE",
-    statusBar: "Detalles disponibles pronto",
-    types: {
-      "PRJ-001": "Caso de Estudio — Detalles Próximamente",
-      "PRJ-002": "Caso de Estudio — Detalles Próximamente",
-      "PRJ-003": "Caso de Estudio — Detalles Próximamente",
-    },
+    subtitle1: "Dos sistemas reales construidos para producción.",
+    subtitle2: "Cada caso explica el problema, qué construí y por qué importa.",
+    problem: "Problema",
+    solution: "Qué construí",
+    relevance: "Por qué importa",
+    stack: "Stack",
+  },
+  experience: {
+    eyebrow: "04 / Trayectoria",
+    title: "Experiencia",
+    subtitle: "Tres puestos construyendo backend, automatización e IA en producción.",
+    stack: "Stack",
+    education: "Educación",
+    certifications: "Certificaciones",
+    languages: "Idiomas",
   },
   contact: {
     rotateDevice: "GIRAR DISPOSITIVO",
@@ -507,8 +521,8 @@ export const es: typeof en = {
     machineSummary: {
       header: "Resumen de Máquina",
       experience: "Años de Experiencia",
-      projects: "Proyectos Entregados",
-      uptime: "Enfoque en Uptime",
+      projects: "Casos de Estudio",
+      companies: "Empresas",
       learning: "Siempre Aprendiendo",
       footer1: "No Solo Codifico.",
       footer2: "Ingeniero Soluciones.",

@@ -40,7 +40,7 @@ const ENGINE_BASE: EngineModuleBase[] = [
     side: "left",
     className: "left-[2%] top-[13%]",
     dotClassName: "left-[38%] top-[40%]",
-    stack: ["Service Layer", "Domain Models", "DTOs", "Validators"],
+    stack: ["Service Layer", "Domain Models", "DTOs", "Validators", "Jest"],
     flowStep: "Logic",
   },
   {
@@ -49,7 +49,7 @@ const ENGINE_BASE: EngineModuleBase[] = [
     side: "left",
     className: "left-[2%] top-[40%]",
     dotClassName: "left-[47%] top-[53%]",
-    stack: ["Node.js", "Java", "TypeScript", "Workers", "React", "React Native", "JavaScript"],
+    stack: ["Node.js", "Java", "TypeScript", "NestJS", "Express", "Spring Boot", "React", "React Native", "JavaScript"],
     flowStep: "Runtime",
   },
   {
@@ -58,7 +58,7 @@ const ENGINE_BASE: EngineModuleBase[] = [
     side: "left",
     className: "left-[2%] top-[67%]",
     dotClassName: "left-[43%] top-[70%]",
-    stack: ["PostgreSQL", "Redis", "Indexes", "Caching"],
+    stack: ["PostgreSQL", "MySQL", "MongoDB", "Mongoose"],
     flowStep: "Data",
   },
   {
@@ -67,7 +67,7 @@ const ENGINE_BASE: EngineModuleBase[] = [
     side: "right",
     className: "right-[2%] top-[13%]",
     dotClassName: "left-[50%] top-[25%]",
-    stack: ["REST APIs", "GraphQL", "JWT Auth", "Webhooks"],
+    stack: ["REST APIs", "GraphQL", "JWT", "OAuth2", "Swagger"],
     flowStep: "API",
   },
   {
@@ -76,7 +76,7 @@ const ENGINE_BASE: EngineModuleBase[] = [
     side: "right",
     className: "right-[2%] top-[40%]",
     dotClassName: "left-[68%] top-[43%]",
-    stack: ["n8n", "Cron Jobs", "Queues", "CI/CD"],
+    stack: ["n8n", "CI/CD", "Git", "Stripe", "RevenueCat"],
     flowStep: "Automation",
   },
   {
@@ -85,7 +85,7 @@ const ENGINE_BASE: EngineModuleBase[] = [
     side: "right",
     className: "right-[2%] top-[67%]",
     dotClassName: "left-[64%] top-[61%]",
-    stack: ["LLMs", "AI Agents", "Claude", "OpenAI"],
+    stack: ["AI Agents", "Claude Code", "MCP", "OpenAI API"],
     flowStep: "AI",
   },
 ];

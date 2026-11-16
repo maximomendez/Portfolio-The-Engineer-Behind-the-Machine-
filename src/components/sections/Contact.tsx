@@ -15,6 +15,10 @@ const HEX_CX = 200;
 const HEX_CY = 200;
 const RING_R = 175;
 
+// Rounded so server and client render identical SVG attributes: Math.sin/cos
+// can differ in the last decimals between Node and the browser (hydration mismatch).
+const round2 = (n: number) => Math.round(n * 100) / 100;
+
 function buildTicks() {
   const ticks: Array<{ x1: number; y1: number; x2: number; y2: number; major: boolean }> = [];
   // Hex vertex angles (top-pointing hex): 270, 330, 30, 90, 150, 210 degrees
@@ -27,10 +31,10 @@ function buildTicks() {
     const outerR = RING_R;
     const innerR = isVertex ? RING_R - 18 : isMajor ? RING_R - 12 : RING_R - 6;
     ticks.push({
-      x1: HEX_CX + outerR * Math.cos(rad),
-      y1: HEX_CY + outerR * Math.sin(rad),
-      x2: HEX_CX + innerR * Math.cos(rad),
-      y2: HEX_CY + innerR * Math.sin(rad),
+      x1: round2(HEX_CX + outerR * Math.cos(rad)),
+      y1: round2(HEX_CY + outerR * Math.sin(rad)),
+      x2: round2(HEX_CX + innerR * Math.cos(rad)),
+      y2: round2(HEX_CY + innerR * Math.sin(rad)),
       major: isMajor || isVertex,
     });
   }
@@ -79,8 +83,8 @@ function HexDecorativeRing() {
         return (
           <circle
             key={deg}
-            cx={HEX_CX + dotR * Math.cos(rad)}
-            cy={HEX_CY + dotR * Math.sin(rad)}
+            cx={round2(HEX_CX + dotR * Math.cos(rad))}
+            cy={round2(HEX_CY + dotR * Math.sin(rad))}
             r={2.5}
             fill="#ff2d2d"
             fillOpacity={0.6}

@@ -22,11 +22,11 @@ type PipelineStage = {
 };
 
 const STAGE_STATIC = [
-  { id: "input",   step: 1, stack: ["REST APIs", "Webhooks", "File Uploads", "DB Queries", "User Input"], accent: "#00D4FF" as Accent },
-  { id: "context", step: 2, stack: ["Embeddings", "Vector Store", "Semantic Search", "Memory", "Chunking"], accent: "#00D4FF" as Accent },
-  { id: "model",   step: 3, stack: ["Claude API", "OpenAI", "Prompt Engineering", "System Prompts", "Chain-of-Thought"], accent: "#FF2D2D" as Accent },
+  { id: "input",   step: 1, stack: ["REST APIs", "JWT", "DB Queries", "User Input"], accent: "#00D4FF" as Accent },
+  { id: "context", step: 2, stack: ["CRM Data", "Agent Config", "TypeScript", "MCP"], accent: "#00D4FF" as Accent },
+  { id: "model",   step: 3, stack: ["OpenAI API", "Claude", "Claude Code"], accent: "#FF2D2D" as Accent },
   { id: "parser",  step: 4, stack: ["JSON Schema", "Zod", "Retry Logic", "Structured Output", "Transformers"], accent: "#3DFF8F" as Accent },
-  { id: "action",  step: 5, stack: ["n8n", "Webhooks", "PostgreSQL", "REST APIs", "Notifications"], accent: "#3DFF8F" as Accent },
+  { id: "action",  step: 5, stack: ["n8n API", "MySQL", "REST APIs"], accent: "#3DFF8F" as Accent },
 ];
 
 function stageIcon(id: string) {
